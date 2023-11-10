@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>ParseNode</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+                    <a class="library-name--link" href="../../../index.html">
+                            crul
+                    </a>
+            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter="crul/JVM">JVM</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="crul::io.github.hc1839.crul.parse/ParseNode///PointingToDeclaration//-1818606378">
+  <div class="breadcrumbs"><a href="../../../index.html">crul</a><span class="delimiter">/</span><a href="../index.html">io.github.hc1839.crul.parse</a><span class="delimiter">/</span><span class="current">ParseNode</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Parse</span><wbr></wbr><span><span>Node</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">ParseNode</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span> : <a href="../../io.github.hc1839.crul.hierarchy.tree/-typed-node/index.html">TypedNode</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt; </span></div><p class="paragraph">Node in a parse tree.</p><h4 class="">Parameters</h4><div class="table"><div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><u><span><span>T</span></span></u></div></span></div><div><div class="title"><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">Enum type representing node type.</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div></div></div></div></div></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="360305553%2FConstructors%2F-1818606378" anchor-label="ParseNode" id="360305553%2FConstructors%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-parse-node.html"><span>Parse</span><wbr></wbr><span><span>Node</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="360305553%2FConstructors%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">type<span class="token operator">: </span><a href="index.html">T</a></span></span><span class="token punctuation">)</span></div><div class="brief "></div><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><a href="index.html">ParseNode</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">deep<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span><span class="token punctuation">, </span></span><span class="parameter ">includeUserData<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token operator"> = </span><span class="token boolean">false</span></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Copy constructor.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="-929840112%2FProperties%2F-1818606378" anchor-label="childNodes" id="-929840112%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/child-nodes.html"><span>child</span><wbr></wbr><span><span>Nodes</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-929840112%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/child-nodes.html">childNodes</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../io.github.hc1839.crul.hierarchy.tree/-node/index.html">Node</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">List of child nodes, or empty list if there are none.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2092159054%2FProperties%2F-1818606378" anchor-label="depth" id="-2092159054%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/depth.html"><span><span>depth</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2092159054%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/depth.html">depth</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><p class="paragraph">Depth of this node with respect to the root node.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1347960167%2FProperties%2F-1818606378" anchor-label="firstChild" id="-1347960167%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/first-child.html"><span>first</span><wbr></wbr><span><span>Child</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1347960167%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/first-child.html">firstChild</a><span class="token operator">: </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-node/index.html">Node</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">First child node, or <code class="lang-kotlin">null</code> if there is no such node.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1141814191%2FProperties%2F-1818606378" anchor-label="lastChild" id="1141814191%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/last-child.html"><span>last</span><wbr></wbr><span><span>Child</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1141814191%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/last-child.html">lastChild</a><span class="token operator">: </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-node/index.html">Node</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Last child node, or <code class="lang-kotlin">null</code> if there is no such node.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-291921498%2FProperties%2F-1818606378" anchor-label="nextSibling" id="-291921498%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/next-sibling.html"><span>next</span><wbr></wbr><span><span>Sibling</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-291921498%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/next-sibling.html">nextSibling</a><span class="token operator">: </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-node/index.html">Node</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Sibling of this node that is next in order, or <code class="lang-kotlin">null</code> if there are none.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1506833127%2FProperties%2F-1818606378" anchor-label="parentNode" id="-1506833127%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/parent-node.html"><span>parent</span><wbr></wbr><span><span>Node</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1506833127%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">var </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/parent-node.html">parentNode</a><span class="token operator">: </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-node/index.html">Node</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Parent node, or <code class="lang-kotlin">null</code> if there is no such node.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1158108586%2FProperties%2F-1818606378" anchor-label="previousSibling" id="1158108586%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/previous-sibling.html"><span>previous</span><wbr></wbr><span><span>Sibling</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1158108586%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/previous-sibling.html">previousSibling</a><span class="token operator">: </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-node/index.html">Node</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Sibling of this node that is previous in order, or <code class="lang-kotlin">null</code> if there are none.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="288745953%2FProperties%2F-1818606378" anchor-label="rootNode" id="288745953%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/root-node.html"><span>root</span><wbr></wbr><span><span>Node</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="288745953%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/root-node.html">rootNode</a><span class="token operator">: </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-node/index.html">Node</a></div><div class="brief "><p class="paragraph">Root node.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="429801005%2FProperties%2F-1818606378" anchor-label="type" id="429801005%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.hc1839.crul.hierarchy.tree/-typed-node/type.html"><span><span>type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="429801005%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">var </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-typed-node/type.html">type</a><span class="token operator">: </span><a href="index.html">T</a></div><div class="brief "><p class="paragraph">Node type as an enum constant.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="822465852%2FFunctions%2F-1818606378" anchor-label="ancestorNodes" id="822465852%2FFunctions%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/ancestor-nodes.html"><span>ancestor</span><wbr></wbr><span><span>Nodes</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="822465852%2FFunctions%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/ancestor-nodes.html"><span class="token function">ancestorNodes</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">includeSelf<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterator/index.html">Iterator</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../io.github.hc1839.crul.hierarchy.tree/-node/index.html">Node</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Ancestors of this node in order of decreasing depth.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-806149957%2FFunctions%2F-1818606378" anchor-label="appendChild" id="-806149957%2FFunctions%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/append-child.html"><span>append</span><wbr></wbr><span><span>Child</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-806149957%2FFunctions%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/append-child.html"><span class="token function">appendChild</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">newChild<span class="token operator">: </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-node/index.html">Node</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-node/index.html">Node</a></div><div class="brief "><p class="paragraph">Adds a node to the end of the list of children of this node.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-16031994%2FFunctions%2F-1818606378" anchor-label="cloneNode" id="-16031994%2FFunctions%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="clone-node.html"><span>clone</span><wbr></wbr><span><span>Node</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-16031994%2FFunctions%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="clone-node.html"><span class="token function">cloneNode</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">deep<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">includeUserData<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">ParseNode</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="index.html">T</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Duplicates this node.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1433338266%2FFunctions%2F-1818606378" anchor-label="createNodeIterator" id="1433338266%2FFunctions%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/create-node-iterator.html"><span>create</span><wbr></wbr><span>Node</span><wbr></wbr><span><span>Iterator</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1433338266%2FFunctions%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/create-node-iterator.html"><span class="token function">createNodeIterator</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">order<span class="token operator">: </span><a href="../../io.github.hc1839.crul.hierarchy.tree.traversal/-traversal-order/index.html">TraversalOrder</a><span class="token punctuation">, </span></span><span class="parameter ">filter<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="../../io.github.hc1839.crul.hierarchy.tree/-node/index.html">Node</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="../../io.github.hc1839.crul.hierarchy.tree.traversal/-filter-state/index.html">FilterState</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../io.github.hc1839.crul.hierarchy.tree.traversal/-node-iterator/index.html">NodeIterator</a></div><div class="brief "><p class="paragraph">Creates a <a href="../../io.github.hc1839.crul.hierarchy.tree.traversal/-node-iterator/index.html">NodeIterator</a> over the subtree rooted at this node.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1131872723%2FFunctions%2F-1818606378" anchor-label="createTreeWalker" id="-1131872723%2FFunctions%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/create-tree-walker.html"><span>create</span><wbr></wbr><span>Tree</span><wbr></wbr><span><span>Walker</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1131872723%2FFunctions%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/create-tree-walker.html"><span class="token function">createTreeWalker</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">filter<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="../../io.github.hc1839.crul.hierarchy.tree/-node/index.html">Node</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="../../io.github.hc1839.crul.hierarchy.tree.traversal/-filter-state/index.html">FilterState</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../io.github.hc1839.crul.hierarchy.tree.traversal/-tree-walker/index.html">TreeWalker</a></div><div class="brief "><p class="paragraph">Creates a <a href="../../io.github.hc1839.crul.hierarchy.tree.traversal/-tree-walker/index.html">TreeWalker</a> over the subtree rooted at this node.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-151739558%2FFunctions%2F-1818606378" anchor-label="getUserData" id="-151739558%2FFunctions%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/get-user-data.html"><span>get</span><wbr></wbr><span>User</span><wbr></wbr><span><span>Data</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-151739558%2FFunctions%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/get-user-data.html"><span class="token function">getUserData</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">key<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Retrieves the object associated by a key on this node.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1622933818%2FFunctions%2F-1818606378" anchor-label="hasChildNodes" id="-1622933818%2FFunctions%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/has-child-nodes.html"><span>has</span><wbr></wbr><span>Child</span><wbr></wbr><span><span>Nodes</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1622933818%2FFunctions%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/has-child-nodes.html"><span class="token function">hasChildNodes</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Whether this node has any children.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-553022448%2FFunctions%2F-1818606378" anchor-label="insertBefore" id="-553022448%2FFunctions%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/insert-before.html"><span>insert</span><wbr></wbr><span><span>Before</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-553022448%2FFunctions%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/insert-before.html"><span class="token function">insertBefore</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">newChild<span class="token operator">: </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-node/index.html">Node</a><span class="token punctuation">, </span></span><span class="parameter ">refChild<span class="token operator">: </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-node/index.html">Node</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-node/index.html">Node</a></div><div class="brief "><p class="paragraph">Inserts a node as a child before an existing child.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="783531025%2FFunctions%2F-1818606378" anchor-label="removeChild" id="783531025%2FFunctions%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/remove-child.html"><span>remove</span><wbr></wbr><span><span>Child</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="783531025%2FFunctions%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/remove-child.html"><span class="token function">removeChild</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">oldChild<span class="token operator">: </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-node/index.html">Node</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-node/index.html">Node</a></div><div class="brief "><p class="paragraph">Removes a child node.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="848962128%2FFunctions%2F-1818606378" anchor-label="setUserData" id="848962128%2FFunctions%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/set-user-data.html"><span>set</span><wbr></wbr><span>User</span><wbr></wbr><span><span>Data</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="848962128%2FFunctions%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-abstract-node/set-user-data.html"><span class="token function">setUserData</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">key<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">userData<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">handler<span class="token operator">: </span><a href="../../io.github.hc1839.crul.hierarchy.tree/-user-data-handler/index.html">UserDataHandler</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">Associates an object by a key on this node.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

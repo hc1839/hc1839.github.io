@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Special.BoidAgent &#8212; Coursework 2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Special.FiniteElement" href="Special.FiniteElement.html" />
+    <link rel="prev" title="Special.BigGMesh" href="Special.BigGMesh.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="special-boidagent">
+<h1>Special.BoidAgent<a class="headerlink" href="#special-boidagent" title="Link to this heading">¶</a></h1>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Special.BoidAgent.Boid" title="Special.BoidAgent.Boid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Special.BoidAgent.Boid</span></code></a></p></td>
+<td><p>Virtual bird.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Special.BoidAgent.BoidCsa2d" title="Special.BoidAgent.BoidCsa2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Special.BoidAgent.BoidCsa2d</span></code></a></p></td>
+<td><p>Boid that follows the CSA model in two-dimensional space.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Special.BoidAgent.BoidFlock" title="Special.BoidAgent.BoidFlock"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Special.BoidAgent.BoidFlock</span></code></a></p></td>
+<td><p>Flock of boids.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Special.BoidAgent.BoidFlockCsa2d" title="Special.BoidAgent.BoidFlockCsa2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Special.BoidAgent.BoidFlockCsa2d</span></code></a></p></td>
+<td><p>Flock of boids that follow the CSA model in two-dimensional space.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Special.BoidAgent.TimepointProgressed" title="Special.BoidAgent.TimepointProgressed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Special.BoidAgent.TimepointProgressed</span></code></a></p></td>
+<td><p>Event for notifying the boids that the timepoint has progressed.</p></td>
+</tr>
+</tbody>
+</table>
+<p id="module-Special.BoidAgent">Agent-based modeling of boids.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="Special.BoidAgent.Boid">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Special.BoidAgent.</span></span><span class="sig-name descname"><span class="pre">Boid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flock</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isLocalBoidFn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.BoidAgent.Boid" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>Virtual bird.</p>
+<dl>
+<dt><strong>Data members:</strong></dt><dd><p><code class="docutils literal notranslate"><span class="pre">_flock</span></code>: Weak reference to the <a class="reference internal" href="#Special.BoidAgent.BoidFlock" title="Special.BoidAgent.BoidFlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">BoidFlock</span></code></a> object that the
+boid is a member of.</p>
+<p><code class="docutils literal notranslate"><span class="pre">_position</span></code>: Position vector of the boid.</p>
+<p><code class="docutils literal notranslate"><span class="pre">_velocity</span></code>: Velocity vector of the boid.</p>
+<p><code class="docutils literal notranslate"><span class="pre">_isLocalBoidFn</span></code>: Binary function for determining local boids.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.BoidAgent.Boid.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flock</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isLocalBoidFn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.BoidAgent.Boid.__init__" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>flock</strong> (<a class="reference internal" href="#Special.BoidAgent.BoidFlock" title="Special.BoidAgent.BoidFlock"><em>BoidFlock</em></a>) – Flock of boids that the new boid is a member of.</p></li>
+<li><p><strong>position</strong> (<em>numpy.ndarray</em>) – Initial position vector.</p></li>
+<li><p><strong>velocity</strong> (<em>numpy.ndarray</em>) – Initial velocity vector.</p></li>
+<li><p><strong>isLocalBoidFn</strong> (<em>callable</em>) – Binary function, where first parameter is this boid, and second
+parameter is another boid. It returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the other boid is
+considered to be local to this boid; <code class="docutils literal notranslate"><span class="pre">False</span></code> if othewise.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – Position and velocity vectors do not have the same dimension.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Special.BoidAgent.Boid.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#Special.BoidAgent.Boid.__weakref__" title="Link to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.BoidAgent.Boid._adjustTrajectory">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_adjustTrajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">oldTimepoint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newTimepoint</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.BoidAgent.Boid._adjustTrajectory" title="Link to this definition">¶</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">[pure</span> <span class="pre">virtual]</span></code> Asks the boid to adjust its trajectory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>oldTimepoint</strong> (<em>float</em>) – Old timepoint.</p></li>
+<li><p><strong>newTimepoint</strong> (<em>float</em>) – New timepoint.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.BoidAgent.Boid._checkSurroundings">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_checkSurroundings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">oldTimepoint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newTimepoint</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.BoidAgent.Boid._checkSurroundings" title="Link to this definition">¶</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">[pure</span> <span class="pre">virtual]</span></code> Asks the boid to check its surroundings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>oldTimepoint</strong> (<em>float</em>) – Old timepoint.</p></li>
+<li><p><strong>newTimepoint</strong> (<em>float</em>) – New timepoint.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.BoidAgent.Boid.flock">
+<span class="sig-name descname"><span class="pre">flock</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Special.BoidAgent.Boid.flock" title="Link to this definition">¶</a></dt>
+<dd><p><a class="reference internal" href="#Special.BoidAgent.BoidFlock" title="Special.BoidAgent.BoidFlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">BoidFlock</span></code></a> that the boid is a member of.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#Special.BoidAgent.BoidFlock" title="Special.BoidAgent.BoidFlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">BoidFlock</span></code></a> that the boid is a member of.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#Special.BoidAgent.BoidFlock" title="Special.BoidAgent.BoidFlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">BoidFlock</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.BoidAgent.Boid.localBoids">
+<span class="sig-name descname"><span class="pre">localBoids</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Special.BoidAgent.Boid.localBoids" title="Link to this definition">¶</a></dt>
+<dd><p>Boids that are considered to be local.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Local boids.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>sequence of <a class="reference internal" href="#Special.BoidAgent.Boid" title="Special.BoidAgent.Boid"><code class="xref py py-class docutils literal notranslate"><span class="pre">Boid</span></code></a> objects</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.BoidAgent.Boid.position">
+<span class="sig-name descname"><span class="pre">position</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Special.BoidAgent.Boid.position" title="Link to this definition">¶</a></dt>
+<dd><p>Position of the boid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Position of the boid.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.BoidAgent.Boid.velocity">
+<span class="sig-name descname"><span class="pre">velocity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Special.BoidAgent.Boid.velocity" title="Link to this definition">¶</a></dt>
+<dd><p>Velocity of the boid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Velocity of the boid.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Special.BoidAgent.BoidCsa2d">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Special.BoidAgent.</span></span><span class="sig-name descname"><span class="pre">BoidCsa2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flock</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isLocalBoidFn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.BoidAgent.BoidCsa2d" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Special.BoidAgent.Boid" title="Special.BoidAgent.Boid"><code class="xref py py-class docutils literal notranslate"><span class="pre">Boid</span></code></a></p>
+<p>Boid that follows the CSA model in two-dimensional space.</p>
+<p>For the CSA model and the utility function, see <a class="reference internal" href="#Special.BoidAgent.BoidFlockCsa2d" title="Special.BoidAgent.BoidFlockCsa2d"><code class="xref py py-class docutils literal notranslate"><span class="pre">BoidFlockCsa2d</span></code></a>.</p>
+<dl class="simple">
+<dt><strong>Data members:</strong></dt><dd><p><code class="docutils literal notranslate"><span class="pre">__cache</span></code>: Cache.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.BoidAgent.BoidCsa2d.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flock</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isLocalBoidFn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.BoidAgent.BoidCsa2d.__init__" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>flock</strong> (<a class="reference internal" href="#Special.BoidAgent.BoidFlock" title="Special.BoidAgent.BoidFlock"><em>BoidFlock</em></a>) – Flock of boids that the new boid is a member of.</p></li>
+<li><p><strong>position</strong> (<em>numpy.ndarray</em>) – Initial position vector.</p></li>
+<li><p><strong>velocity</strong> (<em>numpy.ndarray</em>) – Initial velocity vector.</p></li>
+<li><p><strong>isLocalBoidFn</strong> (<em>callable</em>) – See <a class="reference internal" href="#Special.BoidAgent.Boid.__init__" title="Special.BoidAgent.Boid.__init__"><code class="xref py py-func docutils literal notranslate"><span class="pre">Boid.__init__()</span></code></a>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.BoidAgent.BoidCsa2d._adjustTrajectory">
+<span class="sig-name descname"><span class="pre">_adjustTrajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">oldTimepoint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newTimepoint</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.BoidAgent.BoidCsa2d._adjustTrajectory" title="Link to this definition">¶</a></dt>
+<dd><p>Overrides <a class="reference internal" href="#Special.BoidAgent.Boid._adjustTrajectory" title="Special.BoidAgent.Boid._adjustTrajectory"><code class="xref py py-func docutils literal notranslate"><span class="pre">Boid._adjustTrajectory()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.BoidAgent.BoidCsa2d._checkSurroundings">
+<span class="sig-name descname"><span class="pre">_checkSurroundings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">oldTimepoint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newTimepoint</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.BoidAgent.BoidCsa2d._checkSurroundings" title="Link to this definition">¶</a></dt>
+<dd><p>Overrides <a class="reference internal" href="#Special.BoidAgent.Boid._checkSurroundings" title="Special.BoidAgent.Boid._checkSurroundings"><code class="xref py py-func docutils literal notranslate"><span class="pre">Boid._checkSurroundings()</span></code></a>.</p>
+<p>Prepares for adjusting its trajectory by determining the new velocity
+angle. It does not adjust its trajectory until
+<a class="reference internal" href="#Special.BoidAgent.BoidCsa2d._adjustTrajectory" title="Special.BoidAgent.BoidCsa2d._adjustTrajectory"><code class="xref py py-func docutils literal notranslate"><span class="pre">_adjustTrajectory()</span></code></a> is automatically triggered by the
+<a class="reference internal" href="#Special.BoidAgent.TimepointProgressed" title="Special.BoidAgent.TimepointProgressed"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimepointProgressed</span></code></a> event.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>RuntimeError</strong> – Maximization of the utility function terminated unsuccessfully.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.BoidAgent.BoidCsa2d._utilityFunction">
+<span class="sig-name descname"><span class="pre">_utilityFunction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">velocityAngle</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.BoidAgent.BoidCsa2d._utilityFunction" title="Link to this definition">¶</a></dt>
+<dd><p>Calculates the value of the utility function, which is defined in
+<a class="reference internal" href="#Special.BoidAgent.BoidFlockCsa2d" title="Special.BoidAgent.BoidFlockCsa2d"><code class="xref py py-class docutils literal notranslate"><span class="pre">BoidFlockCsa2d</span></code></a> but rewritten using velocity angle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>velocityAngle</strong> (<em>float</em>) – Angle, within <span class="math notranslate nohighlight">\([0, 2 \pi)\)</span>, of the velocity counterclockwise
+from the positive <span class="math notranslate nohighlight">\(x\)</span>-axis.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Value of the utility function.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – Angle of the velocity is not greater than or equal to 0 and less
+than 2 * pi.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Special.BoidAgent.BoidFlock">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Special.BoidAgent.</span></span><span class="sig-name descname"><span class="pre">BoidFlock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initialTime</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.BoidAgent.BoidFlock" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Flock of boids.</p>
+<dl>
+<dt><strong>Data members:</strong></dt><dd><p><code class="docutils literal notranslate"><span class="pre">_boids</span></code>: List of boids.</p>
+<p><code class="docutils literal notranslate"><span class="pre">_timepoint</span></code>: Timepoint of the flock.</p>
+<p><code class="docutils literal notranslate"><span class="pre">_timepointProgressedEvent</span></code>: <a class="reference internal" href="#Special.BoidAgent.TimepointProgressed" title="Special.BoidAgent.TimepointProgressed"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimepointProgressed</span></code></a>.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.BoidAgent.BoidFlock.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initialTime</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.BoidAgent.BoidFlock.__init__" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>initialTime</strong> (<em>float</em>) – Arbitrary initial time.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Special.BoidAgent.BoidFlock.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#Special.BoidAgent.BoidFlock.__weakref__" title="Link to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.BoidAgent.BoidFlock._addBoid">
+<span class="sig-name descname"><span class="pre">_addBoid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">boid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.BoidAgent.BoidFlock._addBoid" title="Link to this definition">¶</a></dt>
+<dd><p>Adds a boid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>boid</strong> (<a class="reference internal" href="#Special.BoidAgent.Boid" title="Special.BoidAgent.Boid"><em>Boid</em></a>) – Boid to add.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – Boid is already in the flock.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.BoidAgent.BoidFlock.averagePosition">
+<span class="sig-name descname"><span class="pre">averagePosition</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Special.BoidAgent.BoidFlock.averagePosition" title="Link to this definition">¶</a></dt>
+<dd><p>Average position of the flock. It is defined as</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{z}_{\text{avg}} = \frac{1}{N} \sum_{i = 1}^{N} \mathbf{z}_{i}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{z}_{i}\)</span> is position of a boid, and <span class="math notranslate nohighlight">\(N\)</span> is
+number of boids.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Average position.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.BoidAgent.BoidFlock.averageVelocity">
+<span class="sig-name descname"><span class="pre">averageVelocity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Special.BoidAgent.BoidFlock.averageVelocity" title="Link to this definition">¶</a></dt>
+<dd><p>Average velocity of the flock. It is defined as</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{N} \sum_{i = 1}^{N} \mathbf{v}_{i}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{v}_{i}\)</span> is velocity of a boid, and <span class="math notranslate nohighlight">\(N\)</span> is
+number of boids.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Average velocity.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.BoidAgent.BoidFlock.averageWidth">
+<span class="sig-name descname"><span class="pre">averageWidth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Special.BoidAgent.BoidFlock.averageWidth" title="Link to this definition">¶</a></dt>
+<dd><p>Average width (i.e., average radius) of the flock. It is defined as</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{N} \sum_{i = 1}^{N} |\mathbf{z}_{i} - \mathbf{z}_{\text{avg}}|\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{z}_{\text{avg}}\)</span> is average position of the flock
+(see <a class="reference internal" href="#Special.BoidAgent.BoidFlock.averagePosition" title="Special.BoidAgent.BoidFlock.averagePosition"><code class="xref py py-func docutils literal notranslate"><span class="pre">averagePosition()</span></code></a>), <span class="math notranslate nohighlight">\(\mathbf{z}_{i}\)</span> is position of a
+boid, and <span class="math notranslate nohighlight">\(N\)</span> is number of boids.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Average width.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.BoidAgent.BoidFlock.boids">
+<span class="sig-name descname"><span class="pre">boids</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Special.BoidAgent.BoidFlock.boids" title="Link to this definition">¶</a></dt>
+<dd><p>Boids in the flock.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Boids in the flock.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>sequence of <a class="reference internal" href="#Special.BoidAgent.Boid" title="Special.BoidAgent.Boid"><code class="xref py py-class docutils literal notranslate"><span class="pre">Boid</span></code></a> objects</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.BoidAgent.BoidFlock.progressTimepoint">
+<span class="sig-name descname"><span class="pre">progressTimepoint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">progressionLength</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.BoidAgent.BoidFlock.progressTimepoint" title="Link to this definition">¶</a></dt>
+<dd><p>Progresses the timepoint of the flock.</p>
+<p>It first sends the <a class="reference internal" href="#Special.BoidAgent.TimepointProgressed" title="Special.BoidAgent.TimepointProgressed"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimepointProgressed</span></code></a> event to listening
+boids. After event notifications, the flock then updates its timepoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>progressionLength</strong> (<em>float</em>) – Length, as positive <code class="docutils literal notranslate"><span class="pre">float</span></code>, of the timepoint progression.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – Timepoint progression is not positive.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.BoidAgent.BoidFlock.timepoint">
+<span class="sig-name descname"><span class="pre">timepoint</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Special.BoidAgent.BoidFlock.timepoint" title="Link to this definition">¶</a></dt>
+<dd><p>Current timepoint of the flock.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Timepoint.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.BoidAgent.BoidFlock.timepointProgressedEvent">
+<span class="sig-name descname"><span class="pre">timepointProgressedEvent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Special.BoidAgent.BoidFlock.timepointProgressedEvent" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#Special.BoidAgent.TimepointProgressed" title="Special.BoidAgent.TimepointProgressed"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimepointProgressed</span></code></a> event.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Special.BoidAgent.BoidFlockCsa2d">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Special.BoidAgent.</span></span><span class="sig-name descname"><span class="pre">BoidFlockCsa2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">paramC</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">paramS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">paramA</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initialTime</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.BoidAgent.BoidFlockCsa2d" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Special.BoidAgent.BoidFlock" title="Special.BoidAgent.BoidFlock"><code class="xref py py-class docutils literal notranslate"><span class="pre">BoidFlock</span></code></a></p>
+<p>Flock of boids that follow the CSA model in two-dimensional space.</p>
+<p>It uses the following utility function, <span class="math notranslate nohighlight">\(f\)</span>, where <span class="math notranslate nohighlight">\(C\)</span>,
+<span class="math notranslate nohighlight">\(S\)</span>, and <span class="math notranslate nohighlight">\(A\)</span> are the CSA parameters that determine the relative
+importance of cohesion, separation, and alignment, respectively.</p>
+<div class="math notranslate nohighlight">
+\[f(\mathbf{v}; \mathbf{z}, \mathbf{z}_{i}, \mathbf{V}) =
+    C \frac{\mathbf{v} \cdot (\Delta \mathbf{z})_{\text{avg}}}{|\mathbf{v}| |(\Delta \mathbf{z})_{\text{avg}}|}
+    + A \frac{\mathbf{v} \cdot \mathbf{V}}{|\mathbf{v}| |\mathbf{V}|}
+    - S \frac{\mathbf{v} \cdot (\Delta \mathbf{z})_{\text{min}}}{|\mathbf{v}| |(\Delta \mathbf{z})_{\text{min}}|^{3}}\]</div>
+<p><span class="math notranslate nohighlight">\(\mathbf{v}\)</span> is velocity of the boid of interest and can be varied in
+its direction only. <span class="math notranslate nohighlight">\(\Delta \mathbf{z}\)</span> is displacement from the boid
+of interest to a local boid. <span class="math notranslate nohighlight">\((\Delta \mathbf{z})_{\text{avg}}\)</span> is
+average displacement from the boid of interest to local boids.
+<span class="math notranslate nohighlight">\((\Delta \mathbf{z})_{\text{min}}\)</span> is displacement from the boid of
+interest to a local boid such that the distance is the shortest.
+<span class="math notranslate nohighlight">\(\mathbf{V}\)</span> is average velocity of local boids. Mathematically,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}(\Delta \mathbf{z})_{\text{avg}} &amp;= \frac{1}{N} \sum_{i = 1}^{N} (\mathbf{z}_{i} - \mathbf{z}) \\[2mm]
+(\Delta \mathbf{z})_{\text{min}} &amp;= \arg\min_{\Delta \mathbf{z}} |\Delta \mathbf{z}| \\[2mm]
+\mathbf{V} &amp;= \frac{1}{N} \sum_{i = 1}^{N} \mathbf{v}_{i}\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(i\)</span> iterates the local boids, <span class="math notranslate nohighlight">\(N\)</span> is number of local
+boids, <span class="math notranslate nohighlight">\(\mathbf{z}\)</span> is position of the boid of interest,
+<span class="math notranslate nohighlight">\(\mathbf{z}_{i}\)</span> is position of a local boid, and
+<span class="math notranslate nohighlight">\(\mathbf{v}_{i}\)</span> is velocity of a local boid. Local boids refer to
+other boids that are nearby and do not include the boid of interest.</p>
+<dl class="simple">
+<dt><strong>Data members:</strong></dt><dd><p><code class="docutils literal notranslate"><span class="pre">_csaParams</span></code>: 3-tuple of the CSA parameters (<span class="math notranslate nohighlight">\(C\)</span>, <span class="math notranslate nohighlight">\(S\)</span>,
+and <span class="math notranslate nohighlight">\(A\)</span>, in order).</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.BoidAgent.BoidFlockCsa2d.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">paramC</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">paramS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">paramA</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initialTime</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.BoidAgent.BoidFlockCsa2d.__init__" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>paramC</strong> (<em>float</em>) – Cohesion parameter of the CSA model.</p></li>
+<li><p><strong>paramS</strong> (<em>float</em>) – Separation parameter of the CSA model.</p></li>
+<li><p><strong>paramA</strong> (<em>float</em>) – Alignment parameter of the CSA model.</p></li>
+<li><p><strong>initialTime</strong> (<em>float</em>) – Arbitrary initial time.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.BoidAgent.BoidFlockCsa2d.csaParams">
+<span class="sig-name descname"><span class="pre">csaParams</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Special.BoidAgent.BoidFlockCsa2d.csaParams" title="Link to this definition">¶</a></dt>
+<dd><p>CSA parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>CSA parameters, in order, as a 3-tuple.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Special.BoidAgent.TimepointProgressed">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Special.BoidAgent.</span></span><span class="sig-name descname"><span class="pre">TimepointProgressed</span></span><a class="headerlink" href="#Special.BoidAgent.TimepointProgressed" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Event</span></code></p>
+<p>Event for notifying the boids that the timepoint has progressed.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.BoidAgent.TimepointProgressed.attach">
+<span class="sig-name descname"><span class="pre">attach</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">boid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">checkSurroundingsHandler</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">adjustTrajectoryHandler</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.BoidAgent.TimepointProgressed.attach" title="Link to this definition">¶</a></dt>
+<dd><p>Overrides <code class="xref py py-func docutils literal notranslate"><span class="pre">EventBased.Event.attach()</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>boid</strong> (<a class="reference internal" href="#Special.BoidAgent.Boid" title="Special.BoidAgent.Boid"><em>Boid</em></a>) – New boid that is to be registered.</p></li>
+<li><p><strong>checkSurroundingsHandler</strong> (<em>callable</em>) – <p>Binary function that is a member of <code class="docutils literal notranslate"><span class="pre">boid</span></code>, where first parameter
+is old timepoint, and second parameter is new timepoint.</p>
+<p>The notified boid is to check its surroundings to decide on any
+necessary adjustments in its trajectory when
+<code class="docutils literal notranslate"><span class="pre">adjustTrajectoryHandler</span></code> is called.</p>
+</p></li>
+<li><p><strong>adjustTrajectoryHandler</strong> (<em>callable</em>) – <p>Binary function that is a member of <code class="docutils literal notranslate"><span class="pre">boid</span></code>, where first parameter
+is old timepoint, and second parameter is new timepoint.  It is
+called after all boids’ <code class="docutils literal notranslate"><span class="pre">checkSurroundingsHandler</span></code> have been
+called.</p>
+<p>The notified boid is to adjust its trajectory based on the
+surroundings determined through <code class="docutils literal notranslate"><span class="pre">checkSurroundingsHandler</span></code>.</p>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>See <code class="xref py py-func docutils literal notranslate"><span class="pre">EventBased.Event.attach()</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.BoidAgent.TimepointProgressed.notify">
+<span class="sig-name descname"><span class="pre">notify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">oldTimepoint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">newTimepoint</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.BoidAgent.TimepointProgressed.notify" title="Link to this definition">¶</a></dt>
+<dd><p>Overrides <code class="xref py py-func docutils literal notranslate"><span class="pre">EventBased.Event.notify()</span></code>.</p>
+<p>See <a class="reference internal" href="#Special.BoidAgent.TimepointProgressed.attach" title="Special.BoidAgent.TimepointProgressed.attach"><code class="xref py py-func docutils literal notranslate"><span class="pre">attach()</span></code></a> for the notification procedure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>oldTimepoint</strong> (<em>float</em>) – Old timepoint.</p></li>
+<li><p><strong>newTimepoint</strong> (<em>float</em>) – New timepoint.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>See <code class="xref py py-func docutils literal notranslate"><span class="pre">EventBased.Event.notify()</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="Special.BigGMesh.html" title="previous chapter">Special.BigGMesh</a></li>
+      <li>Next: <a href="Special.FiniteElement.html" title="next chapter">Special.FiniteElement</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, hc1839.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../_sources/_autosummary/Special.BoidAgent.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

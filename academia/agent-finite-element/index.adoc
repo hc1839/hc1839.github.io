@@ -1,0 +1,7 @@
+= Agent and Finite-Element Coursework
+:nofooter:
+
+[%hardbreaks]
+link:apidocs/[Python API]
+Coursework (link:coursework/coursework.html[HTML], link:coursework/coursework.ipynb[Jupyter Notebook])
+Discussion (link:discussion/discussion.html[HTML], link:discussion/discussion.adoc[AsciiDoc])

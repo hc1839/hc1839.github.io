@@ -1,0 +1,15 @@
+﻿tests.test_question1
+====================
+
+.. autosummary::
+   :nosignatures:
+
+   
+      tests.test_question1.test_question1
+   
+
+.. automodule:: tests.test_question1
+   :show-inheritance:
+   :members:
+   :private-members:
+   :special-members:

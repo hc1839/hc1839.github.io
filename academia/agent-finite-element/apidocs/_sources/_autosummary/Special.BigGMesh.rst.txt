@@ -1,0 +1,15 @@
+﻿Special.BigGMesh
+================
+
+.. autosummary::
+   :nosignatures:
+
+   
+      Special.BigGMesh.bigGMesh
+   
+
+.. automodule:: Special.BigGMesh
+   :show-inheritance:
+   :members:
+   :private-members:
+   :special-members:

@@ -1,0 +1,35 @@
+﻿Special.FiniteElement
+=====================
+
+.. autosummary::
+   :nosignatures:
+
+   
+      Special.FiniteElement.DirichletNode
+   
+      Special.FiniteElement.Element
+   
+      Special.FiniteElement.Element2d
+   
+      Special.FiniteElement.Mesh
+   
+      Special.FiniteElement.Mesh2d
+   
+      Special.FiniteElement.MeshScaffold
+   
+      Special.FiniteElement.NeumannNode
+   
+      Special.FiniteElement.Node
+   
+      Special.FiniteElement.NodePlaceholder
+   
+      Special.FiniteElement.NonDirichletNode
+   
+      Special.FiniteElement.ShapeFn
+   
+
+.. automodule:: Special.FiniteElement
+   :show-inheritance:
+   :members:
+   :private-members:
+   :special-members:

@@ -1,0 +1,23 @@
+﻿Special.BoidAgent
+=================
+
+.. autosummary::
+   :nosignatures:
+
+   
+      Special.BoidAgent.Boid
+   
+      Special.BoidAgent.BoidCsa2d
+   
+      Special.BoidAgent.BoidFlock
+   
+      Special.BoidAgent.BoidFlockCsa2d
+   
+      Special.BoidAgent.TimepointProgressed
+   
+
+.. automodule:: Special.BoidAgent
+   :show-inheritance:
+   :members:
+   :private-members:
+   :special-members:

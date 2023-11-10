@@ -1,0 +1,15 @@
+﻿Common.PrintedLine
+==================
+
+.. autosummary::
+   :nosignatures:
+
+   
+      Common.PrintedLine.printWithCr
+   
+
+.. automodule:: Common.PrintedLine
+   :show-inheritance:
+   :members:
+   :private-members:
+   :special-members:

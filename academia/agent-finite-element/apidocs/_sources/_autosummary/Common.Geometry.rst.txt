@@ -1,0 +1,23 @@
+﻿Common.Geometry
+===============
+
+.. autosummary::
+   :nosignatures:
+
+   
+      Common.Geometry.isLowerRightTriangle
+   
+      Common.Geometry.isRightTriangle
+   
+      Common.Geometry.isTriangle
+   
+      Common.Geometry.isUpperRightTriangle
+   
+      Common.Geometry.rightAnglePositionOfTriangle
+   
+
+.. automodule:: Common.Geometry
+   :show-inheritance:
+   :members:
+   :private-members:
+   :special-members:

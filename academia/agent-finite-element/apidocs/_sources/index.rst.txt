@@ -1,0 +1,41 @@
+Coursework 2 Documentation
+==========================
+
+List of Modules
+---------------
+
+.. toctree::
+   :glob:
+
+   _autosummary/*
+
+
+Brief Module Descriptions
+-------------------------
+
+.. autosummary::
+   :toctree: _autosummary
+
+   Common.EventBased
+   Common.Float
+   Common.Geometry
+   Common.List
+   Common.PrintedLine
+   Common.SympyFn
+   Common.Vector
+   Common.__init__
+   Special.BigGMesh
+   Special.BoidAgent
+   Special.FiniteElement
+   Special.FiniteElementTriangle
+   Special.__init__
+   tests.__init__
+   tests.test_question1
+   tests.test_question2
+
+Index
+-----
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

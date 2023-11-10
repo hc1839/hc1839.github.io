@@ -1,0 +1,15 @@
+﻿Common.SympyFn
+==============
+
+.. autosummary::
+   :nosignatures:
+
+   
+      Common.SympyFn.SympyFn
+   
+
+.. automodule:: Common.SympyFn
+   :show-inheritance:
+   :members:
+   :private-members:
+   :special-members:

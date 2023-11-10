@@ -1,0 +1,15 @@
+﻿Common.EventBased
+=================
+
+.. autosummary::
+   :nosignatures:
+
+   
+      Common.EventBased.Event
+   
+
+.. automodule:: Common.EventBased
+   :show-inheritance:
+   :members:
+   :private-members:
+   :special-members:

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Special.FiniteElementTriangle &#8212; Coursework 2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Special.__init__" href="Special.__init__.html" />
+    <link rel="prev" title="Special.FiniteElement" href="Special.FiniteElement.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="special-finiteelementtriangle">
+<h1>Special.FiniteElementTriangle<a class="headerlink" href="#special-finiteelementtriangle" title="Link to this heading">¶</a></h1>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Special.FiniteElementTriangle.LowerRightTriangle" title="Special.FiniteElementTriangle.LowerRightTriangle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Special.FiniteElementTriangle.LowerRightTriangle</span></code></a></p></td>
+<td><p>Element that is a lower right triangle.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Special.FiniteElementTriangle.RightTriangle" title="Special.FiniteElementTriangle.RightTriangle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Special.FiniteElementTriangle.RightTriangle</span></code></a></p></td>
+<td><p>Element that is a right triangle.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Special.FiniteElementTriangle.Triangle" title="Special.FiniteElementTriangle.Triangle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Special.FiniteElementTriangle.Triangle</span></code></a></p></td>
+<td><p>Triangular element.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Special.FiniteElementTriangle.TriangleMesh" title="Special.FiniteElementTriangle.TriangleMesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Special.FiniteElementTriangle.TriangleMesh</span></code></a></p></td>
+<td><p>2D mesh using triangles as elements.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Special.FiniteElementTriangle.UpperRightTriangle" title="Special.FiniteElementTriangle.UpperRightTriangle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Special.FiniteElementTriangle.UpperRightTriangle</span></code></a></p></td>
+<td><p>Element that is an upper right triangle.</p></td>
+</tr>
+</tbody>
+</table>
+<p id="module-Special.FiniteElementTriangle">Finite element method using triangles.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="Special.FiniteElementTriangle.LowerRightTriangle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Special.FiniteElementTriangle.</span></span><span class="sig-name descname"><span class="pre">LowerRightTriangle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">triangleMesh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shapeFns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElementTriangle.LowerRightTriangle" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Special.FiniteElementTriangle.RightTriangle" title="Special.FiniteElementTriangle.RightTriangle"><code class="xref py py-class docutils literal notranslate"><span class="pre">RightTriangle</span></code></a></p>
+<p>Element that is a lower right triangle.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElementTriangle.LowerRightTriangle.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">triangleMesh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shapeFns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElementTriangle.LowerRightTriangle.__init__" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>triangleMesh</strong> (<a class="reference internal" href="#Special.FiniteElementTriangle.TriangleMesh" title="Special.FiniteElementTriangle.TriangleMesh"><em>TriangleMesh</em></a>) – See <a class="reference internal" href="#Special.FiniteElementTriangle.RightTriangle.__init__" title="Special.FiniteElementTriangle.RightTriangle.__init__"><code class="xref py py-func docutils literal notranslate"><span class="pre">RightTriangle.__init__()</span></code></a>.</p></li>
+<li><p><strong>nodes</strong> (<a class="reference internal" href="Special.FiniteElement.html#Special.FiniteElement.Node" title="Special.FiniteElement.Node"><em>Node</em></a>) – See <a class="reference internal" href="#Special.FiniteElementTriangle.RightTriangle.__init__" title="Special.FiniteElementTriangle.RightTriangle.__init__"><code class="xref py py-func docutils literal notranslate"><span class="pre">RightTriangle.__init__()</span></code></a>.</p></li>
+<li><p><strong>shapeFns</strong> – See <a class="reference internal" href="#Special.FiniteElementTriangle.RightTriangle.__init__" title="Special.FiniteElementTriangle.RightTriangle.__init__"><code class="xref py py-func docutils literal notranslate"><span class="pre">RightTriangle.__init__()</span></code></a>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – Nodes do not specify a lower right triangle.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>Data members:</strong></dt><dd><p><code class="docutils literal notranslate"><span class="pre">_nodes</span></code>: List of <code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code> objects ordered by local index.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElementTriangle.LowerRightTriangle.getNode">
+<span class="sig-name descname"><span class="pre">getNode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">localIndex</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElementTriangle.LowerRightTriangle.getNode" title="Link to this definition">¶</a></dt>
+<dd><p>Overrides <code class="xref py py-func docutils literal notranslate"><span class="pre">RightTriangle.getNode()</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElementTriangle.LowerRightTriangle.nodes">
+<span class="sig-name descname"><span class="pre">nodes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElementTriangle.LowerRightTriangle.nodes" title="Link to this definition">¶</a></dt>
+<dd><p>Overrides <code class="xref py py-func docutils literal notranslate"><span class="pre">RightTriangle.nodes()</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Nodes representing the vertices of the triangle. To get a node by
+its local index, use <a class="reference internal" href="#Special.FiniteElementTriangle.LowerRightTriangle.getNode" title="Special.FiniteElementTriangle.LowerRightTriangle.getNode"><code class="xref py py-func docutils literal notranslate"><span class="pre">getNode()</span></code></a>.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>sequence of <code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code> objects.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Special.FiniteElementTriangle.RightTriangle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Special.FiniteElementTriangle.</span></span><span class="sig-name descname"><span class="pre">RightTriangle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">triangleMesh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shapeFns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElementTriangle.RightTriangle" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Special.FiniteElementTriangle.Triangle" title="Special.FiniteElementTriangle.Triangle"><code class="xref py py-class docutils literal notranslate"><span class="pre">Triangle</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>Element that is a right triangle.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElementTriangle.RightTriangle.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">triangleMesh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shapeFns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElementTriangle.RightTriangle.__init__" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>triangleMesh</strong> (<a class="reference internal" href="#Special.FiniteElementTriangle.TriangleMesh" title="Special.FiniteElementTriangle.TriangleMesh"><em>TriangleMesh</em></a>) – See <a class="reference internal" href="#Special.FiniteElementTriangle.Triangle.__init__" title="Special.FiniteElementTriangle.Triangle.__init__"><code class="xref py py-func docutils literal notranslate"><span class="pre">Triangle.__init__()</span></code></a>.</p></li>
+<li><p><strong>nodes</strong> (<a class="reference internal" href="Special.FiniteElement.html#Special.FiniteElement.Node" title="Special.FiniteElement.Node"><em>Node</em></a>) – See <a class="reference internal" href="#Special.FiniteElementTriangle.Triangle.__init__" title="Special.FiniteElementTriangle.Triangle.__init__"><code class="xref py py-func docutils literal notranslate"><span class="pre">Triangle.__init__()</span></code></a>.</p></li>
+<li><p><strong>shapeFns</strong> – See <a class="reference internal" href="#Special.FiniteElementTriangle.Triangle.__init__" title="Special.FiniteElementTriangle.Triangle.__init__"><code class="xref py py-func docutils literal notranslate"><span class="pre">Triangle.__init__()</span></code></a>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – Nodes do not specify a right triangle.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElementTriangle.RightTriangle.rightAngleNode">
+<span class="sig-name descname"><span class="pre">rightAngleNode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElementTriangle.RightTriangle.rightAngleNode" title="Link to this definition">¶</a></dt>
+<dd><p>Node at the right angle of the triangle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Right angle node.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>RuntimeError</strong> – Right angle node cannot be found.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Special.FiniteElementTriangle.Triangle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Special.FiniteElementTriangle.</span></span><span class="sig-name descname"><span class="pre">Triangle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mesh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shapeFns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElementTriangle.Triangle" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Element2d</span></code></p>
+<p>Triangular element.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElementTriangle.Triangle.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mesh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shapeFns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElementTriangle.Triangle.__init__" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>triangleMesh</strong> (<a class="reference internal" href="Special.FiniteElement.html#Special.FiniteElement.Mesh" title="Special.FiniteElement.Mesh"><em>Mesh</em></a>) – See <code class="xref py py-func docutils literal notranslate"><span class="pre">FiniteElement.Element.__init__()</span></code>.</p></li>
+<li><p><strong>nodes</strong> (<a class="reference internal" href="Special.FiniteElement.html#Special.FiniteElement.Node" title="Special.FiniteElement.Node"><em>Node</em></a>) – Nodes representing the vertices of the triangle. See
+<code class="xref py py-func docutils literal notranslate"><span class="pre">FiniteElement.Element.__init__()</span></code>.</p></li>
+<li><p><strong>shapeFns</strong> – See <code class="xref py py-func docutils literal notranslate"><span class="pre">FiniteElement.Element.__init__()</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – Nodes do not represent a triangle.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Special.FiniteElementTriangle.TriangleMesh">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Special.FiniteElementTriangle.</span></span><span class="sig-name descname"><span class="pre">TriangleMesh</span></span><a class="headerlink" href="#Special.FiniteElementTriangle.TriangleMesh" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh2d</span></code></p>
+<p>2D mesh using triangles as elements.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElementTriangle.TriangleMesh.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElementTriangle.TriangleMesh.__init__" title="Link to this definition">¶</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">[protected]</span></code> Friend of <code class="xref py py-func docutils literal notranslate"><span class="pre">FiniteElement.MeshScaffold.build()</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElementTriangle.TriangleMesh._addElement">
+<span class="sig-name descname"><span class="pre">_addElement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">triangle</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElementTriangle.TriangleMesh._addElement" title="Link to this definition">¶</a></dt>
+<dd><p>Overrides <code class="xref py py-func docutils literal notranslate"><span class="pre">FiniteElement.Mesh2d._addElement()</span></code>. Friend of
+<code class="xref py py-func docutils literal notranslate"><span class="pre">FiniteElement.MeshScaffold.build()</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>triangle</strong> (<a class="reference internal" href="#Special.FiniteElementTriangle.Triangle" title="Special.FiniteElementTriangle.Triangle"><em>Triangle</em></a>) – Triangle element.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>See <code class="xref py py-func docutils literal notranslate"><span class="pre">FiniteElement.Mesh2d._addElement()</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Special.FiniteElementTriangle.UpperRightTriangle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Special.FiniteElementTriangle.</span></span><span class="sig-name descname"><span class="pre">UpperRightTriangle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">triangleMesh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shapeFns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElementTriangle.UpperRightTriangle" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Special.FiniteElementTriangle.RightTriangle" title="Special.FiniteElementTriangle.RightTriangle"><code class="xref py py-class docutils literal notranslate"><span class="pre">RightTriangle</span></code></a></p>
+<p>Element that is an upper right triangle.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElementTriangle.UpperRightTriangle.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">triangleMesh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shapeFns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElementTriangle.UpperRightTriangle.__init__" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>triangleMesh</strong> (<a class="reference internal" href="#Special.FiniteElementTriangle.TriangleMesh" title="Special.FiniteElementTriangle.TriangleMesh"><em>TriangleMesh</em></a>) – See <a class="reference internal" href="#Special.FiniteElementTriangle.RightTriangle.__init__" title="Special.FiniteElementTriangle.RightTriangle.__init__"><code class="xref py py-func docutils literal notranslate"><span class="pre">RightTriangle.__init__()</span></code></a>.</p></li>
+<li><p><strong>nodes</strong> (<a class="reference internal" href="Special.FiniteElement.html#Special.FiniteElement.Node" title="Special.FiniteElement.Node"><em>Node</em></a>) – See <a class="reference internal" href="#Special.FiniteElementTriangle.RightTriangle.__init__" title="Special.FiniteElementTriangle.RightTriangle.__init__"><code class="xref py py-func docutils literal notranslate"><span class="pre">RightTriangle.__init__()</span></code></a>.</p></li>
+<li><p><strong>shapeFns</strong> – See <a class="reference internal" href="#Special.FiniteElementTriangle.RightTriangle.__init__" title="Special.FiniteElementTriangle.RightTriangle.__init__"><code class="xref py py-func docutils literal notranslate"><span class="pre">RightTriangle.__init__()</span></code></a>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – Nodes do not specify an upper right triangle.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt><strong>Data members:</strong></dt><dd><p><code class="docutils literal notranslate"><span class="pre">_nodes</span></code>: List of <code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code> objects ordered by local index.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElementTriangle.UpperRightTriangle.getNode">
+<span class="sig-name descname"><span class="pre">getNode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">localIndex</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElementTriangle.UpperRightTriangle.getNode" title="Link to this definition">¶</a></dt>
+<dd><p>Overrides <code class="xref py py-func docutils literal notranslate"><span class="pre">RightTriangle.getNode()</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElementTriangle.UpperRightTriangle.nodes">
+<span class="sig-name descname"><span class="pre">nodes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElementTriangle.UpperRightTriangle.nodes" title="Link to this definition">¶</a></dt>
+<dd><p>Overrides <code class="xref py py-func docutils literal notranslate"><span class="pre">RightTriangle.nodes()</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Nodes representing the vertices of the triangle. To get a node by
+its local index, use <a class="reference internal" href="#Special.FiniteElementTriangle.UpperRightTriangle.getNode" title="Special.FiniteElementTriangle.UpperRightTriangle.getNode"><code class="xref py py-func docutils literal notranslate"><span class="pre">getNode()</span></code></a>.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>sequence of <code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code> objects.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="Special.FiniteElement.html" title="previous chapter">Special.FiniteElement</a></li>
+      <li>Next: <a href="Special.__init__.html" title="next chapter">Special.__init__</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, hc1839.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../_sources/_autosummary/Special.FiniteElementTriangle.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

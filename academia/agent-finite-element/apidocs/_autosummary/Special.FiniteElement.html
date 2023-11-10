@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Special.FiniteElement &#8212; Coursework 2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Special.FiniteElementTriangle" href="Special.FiniteElementTriangle.html" />
+    <link rel="prev" title="Special.BoidAgent" href="Special.BoidAgent.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="special-finiteelement">
+<h1>Special.FiniteElement<a class="headerlink" href="#special-finiteelement" title="Link to this heading">¶</a></h1>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Special.FiniteElement.DirichletNode" title="Special.FiniteElement.DirichletNode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Special.FiniteElement.DirichletNode</span></code></a></p></td>
+<td><p>Node with Dirichlet boundary condition.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Special.FiniteElement.Element" title="Special.FiniteElement.Element"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Special.FiniteElement.Element</span></code></a></p></td>
+<td><p>Finite element.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Special.FiniteElement.Element2d" title="Special.FiniteElement.Element2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Special.FiniteElement.Element2d</span></code></a></p></td>
+<td><p>2D finite element.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Special.FiniteElement.Mesh" title="Special.FiniteElement.Mesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Special.FiniteElement.Mesh</span></code></a></p></td>
+<td><p>Mesh represented by <code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code> objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Special.FiniteElement.Mesh2d" title="Special.FiniteElement.Mesh2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Special.FiniteElement.Mesh2d</span></code></a></p></td>
+<td><p>2D mesh.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Special.FiniteElement.MeshScaffold" title="Special.FiniteElement.MeshScaffold"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Special.FiniteElement.MeshScaffold</span></code></a></p></td>
+<td><p>Scaffold for constructing <code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code> objects.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Special.FiniteElement.NeumannNode" title="Special.FiniteElement.NeumannNode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Special.FiniteElement.NeumannNode</span></code></a></p></td>
+<td><p>Node with flux boundary condition.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Special.FiniteElement.Node" title="Special.FiniteElement.Node"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Special.FiniteElement.Node</span></code></a></p></td>
+<td><p>Node of a region.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Special.FiniteElement.NodePlaceholder" title="Special.FiniteElement.NodePlaceholder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Special.FiniteElement.NodePlaceholder</span></code></a></p></td>
+<td><p>Placeholder for a node.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#Special.FiniteElement.NonDirichletNode" title="Special.FiniteElement.NonDirichletNode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Special.FiniteElement.NonDirichletNode</span></code></a></p></td>
+<td><p>Non-Dirichlet node.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Special.FiniteElement.ShapeFn" title="Special.FiniteElement.ShapeFn"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Special.FiniteElement.ShapeFn</span></code></a></p></td>
+<td><p>Shape function.</p></td>
+</tr>
+</tbody>
+</table>
+<p id="module-Special.FiniteElement">Finite element construction and representation.</p>
+<p>All indices are zero-based.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="Special.FiniteElement.DirichletNode">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Special.FiniteElement.</span></span><span class="sig-name descname"><span class="pre">DirichletNode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.DirichletNode" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Special.FiniteElement.Node" title="Special.FiniteElement.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></a></p>
+<p>Node with Dirichlet boundary condition.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.DirichletNode.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.DirichletNode.__init__" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>position</strong> (<em>numpy.ndarray</em>) – See <a class="reference internal" href="#Special.FiniteElement.Node.__init__" title="Special.FiniteElement.Node.__init__"><code class="xref py py-func docutils literal notranslate"><span class="pre">Node.__init__()</span></code></a>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Special.FiniteElement.Element">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Special.FiniteElement.</span></span><span class="sig-name descname"><span class="pre">Element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mesh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shapeFns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.Element" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>Finite element.</p>
+<p>Subclasses must have constructors with the same required arguments as
+<a class="reference internal" href="#Special.FiniteElement.Element.__init__" title="Special.FiniteElement.Element.__init__"><code class="xref py py-func docutils literal notranslate"><span class="pre">__init__()</span></code></a>.</p>
+<dl>
+<dt><strong>Data members:</strong></dt><dd><p><code class="docutils literal notranslate"><span class="pre">_mesh</span></code>: See <a class="reference internal" href="#Special.FiniteElement.Element.mesh" title="Special.FiniteElement.Element.mesh"><code class="xref py py-func docutils literal notranslate"><span class="pre">mesh()</span></code></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">_nodes</span></code>: List of nodes. See <a class="reference internal" href="#Special.FiniteElement.Element.nodes" title="Special.FiniteElement.Element.nodes"><code class="xref py py-func docutils literal notranslate"><span class="pre">nodes()</span></code></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">_shapeFns</span></code>: List of local shape functions. See <a class="reference internal" href="#Special.FiniteElement.Element.__init__" title="Special.FiniteElement.Element.__init__"><code class="xref py py-func docutils literal notranslate"><span class="pre">__init__()</span></code></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">_coordTransformation</span></code>: See <a class="reference internal" href="#Special.FiniteElement.Element.coordTransformation" title="Special.FiniteElement.Element.coordTransformation"><code class="xref py py-func docutils literal notranslate"><span class="pre">coordTransformation()</span></code></a>.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.Element.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mesh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shapeFns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.Element.__init__" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mesh</strong> (<a class="reference internal" href="#Special.FiniteElement.Mesh" title="Special.FiniteElement.Mesh"><em>Mesh</em></a>) – Mesh that the element belongs to.</p></li>
+<li><p><strong>nodes</strong> (<em>iterable</em>) – Sequence of <a class="reference internal" href="#Special.FiniteElement.Node" title="Special.FiniteElement.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></a> objects. Order is not important. Local
+indices are determined by element type and node positions.</p></li>
+<li><p><strong>shapeFns</strong> (<em>iterable</em>) – Sequence of shape functions, as <code class="xref py py-class docutils literal notranslate"><span class="pre">SympyFn.SympyFn</span></code> objects,
+ordered by local index. The shape functions are in parent element
+coordinates.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – Number of nodes is zero.</p></li>
+<li><p><strong>ValueError</strong> – Number of shape functions is zero.</p></li>
+<li><p><strong>ValueError</strong> – Number of shape functions is not the same as number of nodes.</p></li>
+<li><p><strong>ValueError</strong> – Nodes do not have the same dimensionality.</p></li>
+<li><p><strong>ValueError</strong> – Shape functions do not have the same parameters.</p></li>
+<li><p><strong>ValueError</strong> – Shape functions do not have the same dimensionality as the nodes.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Special.FiniteElement.Element.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#Special.FiniteElement.Element.__weakref__" title="Link to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.Element.coordTransformation">
+<span class="sig-name descname"><span class="pre">coordTransformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.Element.coordTransformation" title="Link to this definition">¶</a></dt>
+<dd><p>Coordination transformation from parent element to mesh element.</p>
+<p>It is newly constructed only during the first invocation of this
+function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>module</strong> – Module to use for Sympy’s lambdify.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector.VectorFn</span></code> object that performs the transformation.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector.VectorFn</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.Element.getNode">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">getNode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">localIndex</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.Element.getNode" title="Link to this definition">¶</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">[pure</span> <span class="pre">virtual]</span></code> Gets a node by local index with respect to the
+element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>localIndex</strong> (<em>int</em>) – Local index.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Node at <code class="docutils literal notranslate"><span class="pre">localIndex</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#Special.FiniteElement.Node" title="Special.FiniteElement.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – Invalid local index.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.Element.getShapeFn">
+<span class="sig-name descname"><span class="pre">getShapeFn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">localIndex</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.Element.getShapeFn" title="Link to this definition">¶</a></dt>
+<dd><p>Gets a shape function, in parent element coordinates, by local index
+with respect to the element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>localIndex</strong> (<em>int</em>) – Local index.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Shape function at <code class="docutils literal notranslate"><span class="pre">localIndex</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">SympyFn.SympyFn</span></code></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – Invalid local index.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.Element.mesh">
+<span class="sig-name descname"><span class="pre">mesh</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.Element.mesh" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Mesh that the element belongs to.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#Special.FiniteElement.Mesh" title="Special.FiniteElement.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.Element.nodes">
+<span class="sig-name descname"><span class="pre">nodes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.Element.nodes" title="Link to this definition">¶</a></dt>
+<dd><p>Nodes of the element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Nodes of the element.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>sequence of <a class="reference internal" href="#Special.FiniteElement.Node" title="Special.FiniteElement.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></a> objects</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Special.FiniteElement.Element2d">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Special.FiniteElement.</span></span><span class="sig-name descname"><span class="pre">Element2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mesh2d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shapeFns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.Element2d" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Special.FiniteElement.Element" title="Special.FiniteElement.Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a></p>
+<p>2D finite element.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.Element2d.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mesh2d</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shapeFns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.Element2d.__init__" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mesh2d</strong> (<a class="reference internal" href="#Special.FiniteElement.Mesh2d" title="Special.FiniteElement.Mesh2d"><em>Mesh2d</em></a>) – 2D mesh that the element belongs to.</p></li>
+<li><p><strong>nodes</strong> (<em>iterable</em>) – See <a class="reference internal" href="#Special.FiniteElement.Element.__init__" title="Special.FiniteElement.Element.__init__"><code class="xref py py-func docutils literal notranslate"><span class="pre">Element.__init__()</span></code></a>.</p></li>
+<li><p><strong>shapeFns</strong> (<em>iterable</em>) – See <a class="reference internal" href="#Special.FiniteElement.Element.__init__" title="Special.FiniteElement.Element.__init__"><code class="xref py py-func docutils literal notranslate"><span class="pre">Element.__init__()</span></code></a>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – Node positions do not represent a two-dimensional element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Special.FiniteElement.Mesh">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Special.FiniteElement.</span></span><span class="sig-name descname"><span class="pre">Mesh</span></span><a class="headerlink" href="#Special.FiniteElement.Mesh" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>Mesh represented by <a class="reference internal" href="#Special.FiniteElement.Element" title="Special.FiniteElement.Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a> objects.</p>
+<p>Constructors of subclasses must have no required arguments and be
+accessible to <a class="reference internal" href="#Special.FiniteElement.MeshScaffold.build" title="Special.FiniteElement.MeshScaffold.build"><code class="xref py py-func docutils literal notranslate"><span class="pre">MeshScaffold.build()</span></code></a>.</p>
+<dl>
+<dt><strong>Data members:</strong></dt><dd><p><code class="docutils literal notranslate"><span class="pre">_elements</span></code>: List of <a class="reference internal" href="#Special.FiniteElement.Element" title="Special.FiniteElement.Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a> objects.</p>
+<p><code class="docutils literal notranslate"><span class="pre">_nonDirichletNodes</span></code>: List of non-Dirichlet nodes ordered in
+increasing global node indices. It is initialized to <code class="docutils literal notranslate"><span class="pre">None</span></code> on
+instance construction.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.Mesh.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.Mesh.__init__" title="Link to this definition">¶</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">[protected]</span></code> Friend of <a class="reference internal" href="#Special.FiniteElement.MeshScaffold.build" title="Special.FiniteElement.MeshScaffold.build"><code class="xref py py-func docutils literal notranslate"><span class="pre">MeshScaffold.build()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Special.FiniteElement.Mesh.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#Special.FiniteElement.Mesh.__weakref__" title="Link to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.Mesh._addElement">
+<span class="sig-name descname"><span class="pre">_addElement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.Mesh._addElement" title="Link to this definition">¶</a></dt>
+<dd><p>Adds an <a class="reference internal" href="#Special.FiniteElement.Element" title="Special.FiniteElement.Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a> object.</p>
+<p>Subclasses should override this function to provide additional sanity
+checks. Overridden function must be a friend of
+<a class="reference internal" href="#Special.FiniteElement.MeshScaffold.build" title="Special.FiniteElement.MeshScaffold.build"><code class="xref py py-func docutils literal notranslate"><span class="pre">MeshScaffold.build()</span></code></a> or its corresponding subclass.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>element</strong> (<a class="reference internal" href="#Special.FiniteElement.Element" title="Special.FiniteElement.Element"><em>Element</em></a>) – Element. Nodes of the element must not be placeholders.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ValueError</strong> – Element exists.</p></li>
+<li><p><strong>ValueError</strong> – A node of the element is a placeholder.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.Mesh.elements">
+<span class="sig-name descname"><span class="pre">elements</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.Mesh.elements" title="Link to this definition">¶</a></dt>
+<dd><p>Elements of the mesh.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Elements.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>sequence of <a class="reference internal" href="#Special.FiniteElement.Element" title="Special.FiniteElement.Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a> objects</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.Mesh.getNonDirichletNodeIndex">
+<span class="sig-name descname"><span class="pre">getNonDirichletNodeIndex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nonDirichletNode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.Mesh.getNonDirichletNodeIndex" title="Link to this definition">¶</a></dt>
+<dd><p>Gets the zero-based index of a non-Dirichlet node.</p>
+<p>It is suitable for use as matrix element indices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>nonDirichletNode</strong> (<a class="reference internal" href="#Special.FiniteElement.NonDirichletNode" title="Special.FiniteElement.NonDirichletNode"><em>NonDirichletNode</em></a>) – Non-Dirichlet node.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Zero-based index, where indexing is successive and is based on the
+order of increasing global node indices not including Dirichlet
+nodes.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – Node is not a member of this mesh.</p></li>
+<li><p><strong>RuntimeError</strong> – Node cannot be found. It may have been removed without updating.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.Mesh.nodes">
+<span class="sig-name descname"><span class="pre">nodes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.Mesh.nodes" title="Link to this definition">¶</a></dt>
+<dd><p>Nodes of the mesh.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Nodes.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>sequence of <a class="reference internal" href="#Special.FiniteElement.Node" title="Special.FiniteElement.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></a> objects</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Special.FiniteElement.Mesh2d">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Special.FiniteElement.</span></span><span class="sig-name descname"><span class="pre">Mesh2d</span></span><a class="headerlink" href="#Special.FiniteElement.Mesh2d" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Special.FiniteElement.Mesh" title="Special.FiniteElement.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></p>
+<p>2D mesh.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.Mesh2d.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.Mesh2d.__init__" title="Link to this definition">¶</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">[protected]</span></code> Friend of <a class="reference internal" href="#Special.FiniteElement.MeshScaffold.build" title="Special.FiniteElement.MeshScaffold.build"><code class="xref py py-func docutils literal notranslate"><span class="pre">MeshScaffold.build()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.Mesh2d._addElement">
+<span class="sig-name descname"><span class="pre">_addElement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element2d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.Mesh2d._addElement" title="Link to this definition">¶</a></dt>
+<dd><p>Overrides <a class="reference internal" href="#Special.FiniteElement.Mesh._addElement" title="Special.FiniteElement.Mesh._addElement"><code class="xref py py-func docutils literal notranslate"><span class="pre">Mesh._addElement()</span></code></a>. Friend of
+<a class="reference internal" href="#Special.FiniteElement.MeshScaffold.build" title="Special.FiniteElement.MeshScaffold.build"><code class="xref py py-func docutils literal notranslate"><span class="pre">MeshScaffold.build()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>element2d</strong> (<a class="reference internal" href="#Special.FiniteElement.Element2d" title="Special.FiniteElement.Element2d"><em>Element2d</em></a>) – 2D element.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>See <a class="reference internal" href="#Special.FiniteElement.Mesh._addElement" title="Special.FiniteElement.Mesh._addElement"><code class="xref py py-func docutils literal notranslate"><span class="pre">Mesh._addElement()</span></code></a>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Special.FiniteElement.MeshScaffold">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Special.FiniteElement.</span></span><span class="sig-name descname"><span class="pre">MeshScaffold</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meshType</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.MeshScaffold" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Special.FiniteElement.Mesh" title="Special.FiniteElement.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></p>
+<p>Scaffold for constructing <a class="reference internal" href="#Special.FiniteElement.Mesh" title="Special.FiniteElement.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a> objects.</p>
+<dl>
+<dt><strong>Data members:</strong></dt><dd><p><code class="docutils literal notranslate"><span class="pre">_elements</span></code>: List of <a class="reference internal" href="#Special.FiniteElement.Element" title="Special.FiniteElement.Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a> objects.</p>
+<p><code class="docutils literal notranslate"><span class="pre">_meshType</span></code>: See <a class="reference internal" href="#Special.FiniteElement.MeshScaffold.meshType" title="Special.FiniteElement.MeshScaffold.meshType"><code class="xref py py-func docutils literal notranslate"><span class="pre">meshType()</span></code></a>.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.MeshScaffold.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meshType</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.MeshScaffold.__init__" title="Link to this definition">¶</a></dt>
+<dd><p>Instance constructor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>meshType</strong> (<em>type</em>) – Type of mesh that the scaffold is building.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.MeshScaffold._addElement">
+<span class="sig-name descname"><span class="pre">_addElement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.MeshScaffold._addElement" title="Link to this definition">¶</a></dt>
+<dd><p>Adds an <a class="reference internal" href="#Special.FiniteElement.Element" title="Special.FiniteElement.Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a> object to the scaffold.</p>
+<p>Constructors for the types of elements must accept three required
+arguments as specified in <a class="reference internal" href="#Special.FiniteElement.Element.__init__" title="Special.FiniteElement.Element.__init__"><code class="xref py py-func docutils literal notranslate"><span class="pre">Element.__init__()</span></code></a>.</p>
+<p>Friend of <a class="reference internal" href="#Special.FiniteElement.Element.__init__" title="Special.FiniteElement.Element.__init__"><code class="xref py py-func docutils literal notranslate"><span class="pre">Element.__init__()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>element</strong> (<a class="reference internal" href="#Special.FiniteElement.Element" title="Special.FiniteElement.Element"><em>Element</em></a>) – Element that contains only <a class="reference internal" href="#Special.FiniteElement.NodePlaceholder" title="Special.FiniteElement.NodePlaceholder"><code class="xref py py-class docutils literal notranslate"><span class="pre">NodePlaceholder</span></code></a> objects for
+representing its nodes.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ValueError</strong> – Element exists.</p></li>
+<li><p><strong>ValueError</strong> – Nodes of the element are not placeholders.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.MeshScaffold.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">globalNodeIndexer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.MeshScaffold.build" title="Link to this definition">¶</a></dt>
+<dd><p>Constructs a <a class="reference internal" href="#Special.FiniteElement.Mesh" title="Special.FiniteElement.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a> object from the scaffold.</p>
+<p>Sanity checks should be performed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>globalNodeIndexer</strong> (<em>callable</em>) – Ternary function, where first parameter is new <a class="reference internal" href="#Special.FiniteElement.Mesh" title="Special.FiniteElement.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a> object
+that is being constructed, second parameter is sequence of nodes
+currently in the new mesh, and third parameter is newly constructed
+<a class="reference internal" href="#Special.FiniteElement.Node" title="Special.FiniteElement.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></a> object that is not a placeholder and lacks a global
+index. It returns an <code class="docutils literal notranslate"><span class="pre">int</span></code> that specifies the global index of the
+node.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Instance of a subclass of <a class="reference internal" href="#Special.FiniteElement.Mesh" title="Special.FiniteElement.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>subclass of <a class="reference internal" href="#Special.FiniteElement.Mesh" title="Special.FiniteElement.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – Newly constructed node is a placeholder.</p></li>
+<li><p><strong>ValueError</strong> – Two node placeholders of different types exist at the same
+position.</p></li>
+<li><p><strong>ValueError</strong> – Nodes do not have unique global indices.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.MeshScaffold.elements">
+<span class="sig-name descname"><span class="pre">elements</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.MeshScaffold.elements" title="Link to this definition">¶</a></dt>
+<dd><p>Overrides <a class="reference internal" href="#Special.FiniteElement.Mesh.elements" title="Special.FiniteElement.Mesh.elements"><code class="xref py py-func docutils literal notranslate"><span class="pre">Mesh.elements()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.MeshScaffold.meshType">
+<span class="sig-name descname"><span class="pre">meshType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.MeshScaffold.meshType" title="Link to this definition">¶</a></dt>
+<dd><p>Type of mesh that the scaffold is building.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Final mesh type.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>type</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Special.FiniteElement.NeumannNode">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Special.FiniteElement.</span></span><span class="sig-name descname"><span class="pre">NeumannNode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.NeumannNode" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Special.FiniteElement.NonDirichletNode" title="Special.FiniteElement.NonDirichletNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">NonDirichletNode</span></code></a></p>
+<p>Node with flux boundary condition.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.NeumannNode.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.NeumannNode.__init__" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>position</strong> (<em>numpy.ndarray</em>) – See <code class="xref py py-func docutils literal notranslate"><span class="pre">UndeterminedNode.__init__()</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Special.FiniteElement.Node">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Special.FiniteElement.</span></span><span class="sig-name descname"><span class="pre">Node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.Node" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>Node of a region.</p>
+<dl>
+<dt><strong>Data members:</strong></dt><dd><p><code class="docutils literal notranslate"><span class="pre">_position</span></code>: See <a class="reference internal" href="#Special.FiniteElement.Node.position" title="Special.FiniteElement.Node.position"><code class="xref py py-func docutils literal notranslate"><span class="pre">position()</span></code></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">_globalIndex</span></code>: See <a class="reference internal" href="#Special.FiniteElement.Node.globalIndex" title="Special.FiniteElement.Node.globalIndex"><code class="xref py py-func docutils literal notranslate"><span class="pre">globalIndex()</span></code></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">_mesh</span></code>: Weak reference to parent mesh. It is initialized to <code class="docutils literal notranslate"><span class="pre">None</span></code>
+at instance construction. Friend of <a class="reference internal" href="#Special.FiniteElement.Mesh._addElement" title="Special.FiniteElement.Mesh._addElement"><code class="xref py py-func docutils literal notranslate"><span class="pre">Mesh._addElement()</span></code></a>.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.Node.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.Node.__init__" title="Link to this definition">¶</a></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">[private]</span></code> Friend of <a class="reference internal" href="#Special.FiniteElement.NonDirichletNode" title="Special.FiniteElement.NonDirichletNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">NonDirichletNode</span></code></a> and
+<a class="reference internal" href="#Special.FiniteElement.DirichletNode" title="Special.FiniteElement.DirichletNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">DirichletNode</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>position</strong> (<em>numpy.ndarray</em>) – Position of the node with respect to the global region.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Special.FiniteElement.Node.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#Special.FiniteElement.Node.__weakref__" title="Link to this definition">¶</a></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.Node.globalIndex">
+<span class="sig-name descname"><span class="pre">globalIndex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.Node.globalIndex" title="Link to this definition">¶</a></dt>
+<dd><p>Global index of the node.</p>
+<p><a class="reference internal" href="#Special.FiniteElement.Element" title="Special.FiniteElement.Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a> object should not call this function when the element
+is on a mesh scaffold, since the node may be a placeholder. See
+<a class="reference internal" href="#Special.FiniteElement.NodePlaceholder.globalIndex" title="Special.FiniteElement.NodePlaceholder.globalIndex"><code class="xref py py-func docutils literal notranslate"><span class="pre">NodePlaceholder.globalIndex()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Global index.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>RuntimeError</strong> – Global index unavailable.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.Node.mesh">
+<span class="sig-name descname"><span class="pre">mesh</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.Node.mesh" title="Link to this definition">¶</a></dt>
+<dd><p>Mesh that the node belongs to.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Parent mesh.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#Special.FiniteElement.Mesh" title="Special.FiniteElement.Mesh"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mesh</span></code></a></p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>RuntimeError</strong> – Node does not belong to a mesh.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.Node.position">
+<span class="sig-name descname"><span class="pre">position</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.Node.position" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Position of the node with respect to the global region.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Special.FiniteElement.NodePlaceholder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Special.FiniteElement.</span></span><span class="sig-name descname"><span class="pre">NodePlaceholder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodeType</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.NodePlaceholder" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Special.FiniteElement.Node" title="Special.FiniteElement.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></a></p>
+<p>Placeholder for a node.</p>
+<dl class="simple">
+<dt><strong>Data members:</strong></dt><dd><p><code class="docutils literal notranslate"><span class="pre">_nodeType</span></code>: See <a class="reference internal" href="#Special.FiniteElement.NodePlaceholder.nodeType" title="Special.FiniteElement.NodePlaceholder.nodeType"><code class="xref py py-func docutils literal notranslate"><span class="pre">nodeType()</span></code></a>.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.NodePlaceholder.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodeType</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.NodePlaceholder.__init__" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nodeType</strong> (<em>type</em>) – Type of node that the placeholder is representing. Its constructor
+accepts one required argument, the global node position.</p></li>
+<li><p><strong>position</strong> (<em>numpy.ndarray</em>) – See <a class="reference internal" href="#Special.FiniteElement.Node.__init__" title="Special.FiniteElement.Node.__init__"><code class="xref py py-func docutils literal notranslate"><span class="pre">Node.__init__()</span></code></a>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.NodePlaceholder.globalIndex">
+<span class="sig-name descname"><span class="pre">globalIndex</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.NodePlaceholder.globalIndex" title="Link to this definition">¶</a></dt>
+<dd><p>Overrides <a class="reference internal" href="#Special.FiniteElement.Node.globalIndex" title="Special.FiniteElement.Node.globalIndex"><code class="xref py py-func docutils literal notranslate"><span class="pre">Node.globalIndex()</span></code></a>.</p>
+<p>Always raises <code class="docutils literal notranslate"><span class="pre">NotImplementedError</span></code> exception.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.NodePlaceholder.nodeType">
+<span class="sig-name descname"><span class="pre">nodeType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.NodePlaceholder.nodeType" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Type of node that the placeholder is representing.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>type</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Special.FiniteElement.NonDirichletNode">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Special.FiniteElement.</span></span><span class="sig-name descname"><span class="pre">NonDirichletNode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.NonDirichletNode" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#Special.FiniteElement.Node" title="Special.FiniteElement.Node"><code class="xref py py-class docutils literal notranslate"><span class="pre">Node</span></code></a></p>
+<p>Non-Dirichlet node.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.NonDirichletNode.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.NonDirichletNode.__init__" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>position</strong> (<em>numpy.ndarray</em>) – See <a class="reference internal" href="#Special.FiniteElement.Node.__init__" title="Special.FiniteElement.Node.__init__"><code class="xref py py-func docutils literal notranslate"><span class="pre">Node.__init__()</span></code></a>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Special.FiniteElement.ShapeFn">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Special.FiniteElement.</span></span><span class="sig-name descname"><span class="pre">ShapeFn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sympyParams</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sympyExpr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.ShapeFn" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">SympyFn</span></code></p>
+<p>Shape function.</p>
+<dl class="simple">
+<dt><strong>Data members:</strong></dt><dd><p><code class="docutils literal notranslate"><span class="pre">_gradient</span></code>: See <a class="reference internal" href="#Special.FiniteElement.ShapeFn.gradient" title="Special.FiniteElement.ShapeFn.gradient"><code class="xref py py-func docutils literal notranslate"><span class="pre">gradient()</span></code></a>.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.ShapeFn.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sympyParams</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sympyExpr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.ShapeFn.__init__" title="Link to this definition">¶</a></dt>
+<dd><p>See <code class="xref py py-func docutils literal notranslate"><span class="pre">SympyFn.SympyFn.__init__()</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Special.FiniteElement.ShapeFn.gradient">
+<span class="sig-name descname"><span class="pre">gradient</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Special.FiniteElement.ShapeFn.gradient" title="Link to this definition">¶</a></dt>
+<dd><p>Gradient of the function.</p>
+<p>It is newly determined only during the first invocation of this
+function.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Gradient.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Vector.VectorFn</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="Special.BoidAgent.html" title="previous chapter">Special.BoidAgent</a></li>
+      <li>Next: <a href="Special.FiniteElementTriangle.html" title="next chapter">Special.FiniteElementTriangle</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, hc1839.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../_sources/_autosummary/Special.FiniteElement.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

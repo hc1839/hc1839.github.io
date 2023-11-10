@@ -1,0 +1,23 @@
+﻿Special.FiniteElementTriangle
+=============================
+
+.. autosummary::
+   :nosignatures:
+
+   
+      Special.FiniteElementTriangle.LowerRightTriangle
+   
+      Special.FiniteElementTriangle.RightTriangle
+   
+      Special.FiniteElementTriangle.Triangle
+   
+      Special.FiniteElementTriangle.TriangleMesh
+   
+      Special.FiniteElementTriangle.UpperRightTriangle
+   
+
+.. automodule:: Special.FiniteElementTriangle
+   :show-inheritance:
+   :members:
+   :private-members:
+   :special-members:

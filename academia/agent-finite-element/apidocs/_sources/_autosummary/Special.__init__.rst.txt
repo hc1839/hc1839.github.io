@@ -1,0 +1,6 @@
+﻿Special.\_\_init\_\_
+====================
+
+.. currentmodule:: Special
+
+.. autofunction:: __init__

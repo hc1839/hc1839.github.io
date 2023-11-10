@@ -1,0 +1,15 @@
+﻿Common.Float
+============
+
+.. autosummary::
+   :nosignatures:
+
+   
+      Common.Float.nearlyEqual
+   
+
+.. automodule:: Common.Float
+   :show-inheritance:
+   :members:
+   :private-members:
+   :special-members:

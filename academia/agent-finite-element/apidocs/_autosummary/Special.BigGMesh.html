@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Special.BigGMesh &#8212; Coursework 2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=039e1c02" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Special.BoidAgent" href="Special.BoidAgent.html" />
+    <link rel="prev" title="Common.__init__" href="Common.__init__.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="special-biggmesh">
+<h1>Special.BigGMesh<a class="headerlink" href="#special-biggmesh" title="Link to this heading">¶</a></h1>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#Special.BigGMesh.bigGMesh" title="Special.BigGMesh.bigGMesh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Special.BigGMesh.bigGMesh</span></code></a></p></td>
+<td><p>Constructs the mesh for the Big G from Question 2.</p></td>
+</tr>
+</tbody>
+</table>
+<p id="module-Special.BigGMesh">Node indices and triangles for Question 2.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="Special.BigGMesh._find_node_index_of_location">
+<span class="sig-prename descclassname"><span class="pre">Special.BigGMesh.</span></span><span class="sig-name descname"><span class="pre">_find_node_index_of_location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.BigGMesh._find_node_index_of_location" title="Link to this definition">¶</a></dt>
+<dd><p>Given all the nodes and a location (that should be the location of <em>a</em>
+node), return the index of that node.</p>
+<dl class="simple">
+<dt>nodes<span class="classifier">array of float</span></dt><dd><p>(Nnodes, 2) array containing the x, y coordinates of the nodes</p>
+</dd>
+<dt>location<span class="classifier">array of float</span></dt><dd><p>(2,) array containing the x, y coordinates of location</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Index of the node.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Special.BigGMesh._generate_g_grid">
+<span class="sig-prename descclassname"><span class="pre">Special.BigGMesh.</span></span><span class="sig-name descname"><span class="pre">_generate_g_grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">side_length</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.BigGMesh._generate_g_grid" title="Link to this definition">¶</a></dt>
+<dd><p>Generate a 2d triangulation of the letter G. All triangles have the same
+size (right triangles, short length side_length)</p>
+<dl class="simple">
+<dt>side_length<span class="classifier">float</span></dt><dd><p>The length of each triangle. Should be 1/N for some integer N</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>nodes<span class="classifier">array of float</span></dt><dd><p>(Nnodes, 2) array containing the x, y coordinates of the nodes</p>
+</dd>
+<dt>IEN<span class="classifier">array of int</span></dt><dd><p>(Nelements, 3) array linking element number to node number</p>
+</dd>
+<dt>ID<span class="classifier">array of int</span></dt><dd><p>(Nnodes,) array linking node number to equation number; value is -1
+if node should not appear in global arrays.</p>
+</dd>
+</dl>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Special.BigGMesh._meshFromNodePosIen">
+<span class="sig-prename descclassname"><span class="pre">Special.BigGMesh.</span></span><span class="sig-name descname"><span class="pre">_meshFromNodePosIen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ien</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isDirichletNode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.BigGMesh._meshFromNodePosIen" title="Link to this definition">¶</a></dt>
+<dd><p>Constructs a mesh using right triangles.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nodes</strong> (<em>numpy.ndarray</em>) – Matrix of node positions as row vectors.</p></li>
+<li><p><strong>ien</strong> (<em>numpy.ndarray</em>) – IEN matrix of global node indices, where each row vector represents a
+triangle, and column vectors represent the local node indices in order.</p></li>
+<li><p><strong>isDirichletNode</strong> (<em>callable</em>) – Unary function, where first parameter is node position as a row vector.
+It returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the position corresponds to a Dirichlet node;
+<code class="docutils literal notranslate"><span class="pre">False</span></code> if otherwise.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Mesh with isosceles right triangles as elements.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">FiniteElementTriangle.TriangleMesh</span></code></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – Global indices are not unique.</p></li>
+<li><p><strong>ValueError</strong> – Triangle is neither a lower nor an upper.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Special.BigGMesh.bigGMesh">
+<span class="sig-prename descclassname"><span class="pre">Special.BigGMesh.</span></span><span class="sig-name descname"><span class="pre">bigGMesh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rightTriangleLegLength</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Special.BigGMesh.bigGMesh" title="Link to this definition">¶</a></dt>
+<dd><p>Constructs the mesh for the Big G from Question 2.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rightTriangleLegLength</strong> (<em>float</em>) – Leg length of each isosceles right triangle.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Mesh with isosceles right triangles as elements. Nodes with
+x-coordinate equal to <code class="docutils literal notranslate"><span class="pre">4</span></code> are Dirichlet nodes.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">FiniteElementTriangle.TriangleMesh</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="Common.__init__.html" title="previous chapter">Common.__init__</a></li>
+      <li>Next: <a href="Special.BoidAgent.html" title="next chapter">Special.BoidAgent</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, hc1839.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../_sources/_autosummary/Special.BigGMesh.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

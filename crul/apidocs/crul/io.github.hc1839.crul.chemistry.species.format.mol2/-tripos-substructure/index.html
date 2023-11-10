@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>TriposSubstructure</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+                    <a class="library-name--link" href="../../../index.html">
+                            crul
+                    </a>
+            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter="crul/JVM">JVM</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="crul::io.github.hc1839.crul.chemistry.species.format.mol2/TriposSubstructure///PointingToDeclaration//-1818606378">
+  <div class="breadcrumbs"><a href="../../../index.html">crul</a><span class="delimiter">/</span><a href="../index.html">io.github.hc1839.crul.chemistry.species.format.mol2</a><span class="delimiter">/</span><span class="current">TriposSubstructure</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Tripos</span><wbr></wbr><span><span>Substructure</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="index.html">TriposSubstructure</a> <span><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation builtin">JvmOverloads</span></a> </span><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>substId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>substName<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>rootAtom<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>substType<span class="token operator">: </span><a href="-subst-type/index.html">TriposSubstructure.SubstType</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>dictType<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>chain<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>subType<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>interBonds<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>status<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html">Set</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-status-bit/index.html">TriposSubstructure.StatusBit</a><span class="token operator">&gt;</span><span class="token operator"> = </span>setOf()<span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>comment<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span> : <a href="../-tripos-record/index.html">TriposRecord</a></div><p class="paragraph">Tripos <code class="lang-kotlin">SUBSTRUCTURE</code> record.</p><p class="paragraph">Parameter names correspond to those in the Mol2 format.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="227315465%2FConstructors%2F-1818606378" anchor-label="TriposSubstructure" id="227315465%2FConstructors%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-tripos-substructure.html"><span>Tripos</span><wbr></wbr><span><span>Substructure</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="227315465%2FConstructors%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/-jvm-overloads/index.html"><span class="token annotation builtin">JvmOverloads</span></a></div></div><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">substId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">substName<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">rootAtom<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">substType<span class="token operator">: </span><a href="-subst-type/index.html">TriposSubstructure.SubstType</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">dictType<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">chain<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">subType<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">interBonds<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator">?</span><span class="token operator"> = </span>null<span class="token punctuation">, </span></span><span class="parameter ">status<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html">Set</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-status-bit/index.html">TriposSubstructure.StatusBit</a><span class="token operator">&gt;</span><span class="token operator"> = </span>setOf()<span class="token punctuation">, </span></span><span class="parameter ">comment<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span></div><div class="brief "></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="1366056119%2FClasslikes%2F-1818606378" anchor-label="Builder" id="1366056119%2FClasslikes%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-builder/index.html"><span><span>Builder</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1366056119%2FClasslikes%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">class </span><a href="-builder/index.html">Builder</a> : <a href="../-tripos-record/-builder/index.html">TriposRecord.Builder</a></div><div class="brief "><p class="paragraph">Builder for <a href="index.html">TriposSubstructure</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-278172585%2FClasslikes%2F-1818606378" anchor-label="StatusBit" id="-278172585%2FClasslikes%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-status-bit/index.html"><span>Status</span><wbr></wbr><span><span>Bit</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-278172585%2FClasslikes%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-status-bit/index.html">StatusBit</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-status-bit/index.html">TriposSubstructure.StatusBit</a><span class="token operator">&gt; </span>, <a href="../-tripos-string-field/index.html">TriposStringField</a></div><div class="brief "><p class="paragraph">Internal SYBYL status bit.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="295007383%2FClasslikes%2F-1818606378" anchor-label="SubstType" id="295007383%2FClasslikes%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-subst-type/index.html"><span>Subst</span><wbr></wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="295007383%2FClasslikes%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">enum </span><a href="-subst-type/index.html">SubstType</a> : <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-enum/index.html">Enum</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-subst-type/index.html">TriposSubstructure.SubstType</a><span class="token operator">&gt; </span>, <a href="../-tripos-string-field/index.html">TriposStringField</a></div><div class="brief "><p class="paragraph">Substructure type.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="-344739266%2FProperties%2F-1818606378" anchor-label="chain" id="-344739266%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="chain.html"><span><span>chain</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-344739266%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="chain.html">chain</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="877971424%2FProperties%2F-1818606378" anchor-label="comment" id="877971424%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="comment.html"><span><span>comment</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="877971424%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="comment.html">comment</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-813904821%2FProperties%2F-1818606378" anchor-label="dictType" id="-813904821%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="dict-type.html"><span>dict</span><wbr></wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-813904821%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="dict-type.html">dictType</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator">?</span><span class="token operator"> = </span>null</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1672612551%2FProperties%2F-1818606378" anchor-label="interBonds" id="1672612551%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="inter-bonds.html"><span>inter</span><wbr></wbr><span><span>Bonds</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1672612551%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="inter-bonds.html">interBonds</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token operator">?</span><span class="token operator"> = </span>null</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2083071504%2FProperties%2F-1818606378" anchor-label="recordType" id="2083071504%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="record-type.html"><span>record</span><wbr></wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2083071504%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="record-type.html">recordType</a><span class="token operator">: </span><a href="../-tripos-record-type/index.html">TriposRecordType</a></div><div class="brief "><p class="paragraph">Record type.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-305503128%2FProperties%2F-1818606378" anchor-label="rootAtom" id="-305503128%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="root-atom.html"><span>root</span><wbr></wbr><span><span>Atom</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-305503128%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="root-atom.html">rootAtom</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="557126185%2FProperties%2F-1818606378" anchor-label="status" id="557126185%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="status.html"><span><span>status</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="557126185%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="status.html">status</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html">Set</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="-status-bit/index.html">TriposSubstructure.StatusBit</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-617331901%2FProperties%2F-1818606378" anchor-label="substId" id="-617331901%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="subst-id.html"><span>subst</span><wbr></wbr><span><span>Id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-617331901%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="subst-id.html">substId</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="350799763%2FProperties%2F-1818606378" anchor-label="substName" id="350799763%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="subst-name.html"><span>subst</span><wbr></wbr><span><span>Name</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="350799763%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="subst-name.html">substName</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1280574916%2FProperties%2F-1818606378" anchor-label="substType" id="1280574916%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="subst-type.html"><span>subst</span><wbr></wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1280574916%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="subst-type.html">substType</a><span class="token operator">: </span><a href="-subst-type/index.html">TriposSubstructure.SubstType</a><span class="token operator">?</span><span class="token operator"> = </span>null</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1271897349%2FProperties%2F-1818606378" anchor-label="subType" id="1271897349%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="sub-type.html"><span>sub</span><wbr></wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1271897349%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="sub-type.html">subType</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span><span class="token operator"> = </span>null</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="1733554992%2FFunctions%2F-1818606378" anchor-label="exportMol2" id="1733554992%2FFunctions%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="export-mol2.html"><span>export</span><wbr></wbr><span><span>Mol2</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1733554992%2FFunctions%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="export-mol2.html"><span class="token function">exportMol2</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">writer<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/io/Writer.html">Writer</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Writes the Tripos record in Mol2 format without the record type indicator.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

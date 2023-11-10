@@ -1,0 +1,6 @@
+﻿Common.\_\_init\_\_
+===================
+
+.. currentmodule:: Common
+
+.. autofunction:: __init__

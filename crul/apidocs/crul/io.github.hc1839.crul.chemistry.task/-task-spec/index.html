@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>TaskSpec</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+                    <a class="library-name--link" href="../../../index.html">
+                            crul
+                    </a>
+            </div>
+            <div class="library-version">
+            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter="crul/JVM">JVM</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="crul::io.github.hc1839.crul.chemistry.task/TaskSpec///PointingToDeclaration//-1818606378">
+  <div class="breadcrumbs"><a href="../../../index.html">crul</a><span class="delimiter">/</span><a href="../index.html">io.github.hc1839.crul.chemistry.task</a><span class="delimiter">/</span><span class="current">TaskSpec</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Task</span><wbr></wbr><span><span>Spec</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">data </span><span class="token keyword">class </span><a href="index.html">TaskSpec</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter "><span class="token keyword">val </span>taskUri<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/net/URI.html">URI</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>tagUris<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html">Set</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/net/URI.html">URI</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>calculationComplete<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>estimatedDuration<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>numProcs<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>ioPrefix<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>inputSuffix<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>outputSuffix<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>errorSuffix<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>executablePath<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html">Path</a><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>commands<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter "><span class="token keyword">val </span>dependencies<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html">Set</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/net/URI.html">URI</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span> : <a href="../-task-node/index.html">TaskNode</a></div><p class="paragraph">Task specification.</p><p class="paragraph">See the corresponding JSON schema file for description of the properties.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="-811867316%2FConstructors%2F-1818606378" anchor-label="TaskSpec" id="-811867316%2FConstructors%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-task-spec.html"><span>Task</span><wbr></wbr><span><span>Spec</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-811867316%2FConstructors%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">taskUri<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/net/URI.html">URI</a><span class="token punctuation">, </span></span><span class="parameter ">tagUris<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html">Set</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/net/URI.html">URI</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">calculationComplete<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a><span class="token punctuation">, </span></span><span class="parameter ">estimatedDuration<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a><span class="token punctuation">, </span></span><span class="parameter ">numProcs<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span></span><span class="parameter ">ioPrefix<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">inputSuffix<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">outputSuffix<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">errorSuffix<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">executablePath<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html">Path</a><span class="token punctuation">, </span></span><span class="parameter ">commands<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">dependencies<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html">Set</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/net/URI.html">URI</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="1502020463%2FProperties%2F-1818606378" anchor-label="calculationComplete" id="1502020463%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="calculation-complete.html"><span>calculation</span><wbr></wbr><span><span>Complete</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1502020463%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="calculation-complete.html">calculationComplete</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1606747681%2FProperties%2F-1818606378" anchor-label="commands" id="1606747681%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="commands.html"><span><span>commands</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1606747681%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="commands.html">commands</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="895075488%2FProperties%2F-1818606378" anchor-label="dependencies" id="895075488%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="dependencies.html"><span><span>dependencies</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="895075488%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="dependencies.html">dependencies</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html">Set</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/net/URI.html">URI</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">URIs of the task dependencies.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1806490888%2FProperties%2F-1818606378" anchor-label="errorSuffix" id="-1806490888%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="error-suffix.html"><span>error</span><wbr></wbr><span><span>Suffix</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1806490888%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="error-suffix.html">errorSuffix</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1013293409%2FProperties%2F-1818606378" anchor-label="estimatedDuration" id="1013293409%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="estimated-duration.html"><span>estimated</span><wbr></wbr><span><span>Duration</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1013293409%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="estimated-duration.html">estimatedDuration</a><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/time/Duration.html">Duration</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="122433018%2FProperties%2F-1818606378" anchor-label="executablePath" id="122433018%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="executable-path.html"><span>executable</span><wbr></wbr><span><span>Path</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="122433018%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="executable-path.html">executablePath</a><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html">Path</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1394369782%2FProperties%2F-1818606378" anchor-label="inputSuffix" id="1394369782%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="input-suffix.html"><span>input</span><wbr></wbr><span><span>Suffix</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1394369782%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="input-suffix.html">inputSuffix</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1046438737%2FProperties%2F-1818606378" anchor-label="ioPrefix" id="1046438737%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="io-prefix.html"><span>io</span><wbr></wbr><span><span>Prefix</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1046438737%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="io-prefix.html">ioPrefix</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1533692818%2FProperties%2F-1818606378" anchor-label="numProcs" id="1533692818%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="num-procs.html"><span>num</span><wbr></wbr><span><span>Procs</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1533692818%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="num-procs.html">numProcs</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1517812169%2FProperties%2F-1818606378" anchor-label="outputSuffix" id="-1517812169%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="output-suffix.html"><span>output</span><wbr></wbr><span><span>Suffix</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1517812169%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="output-suffix.html">outputSuffix</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-309875152%2FProperties%2F-1818606378" anchor-label="tagUris" id="-309875152%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="tag-uris.html"><span>tag</span><wbr></wbr><span><span>Uris</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-309875152%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">val </span><a href="tag-uris.html">tagUris</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-set/index.html">Set</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/net/URI.html">URI</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="741072522%2FProperties%2F-1818606378" anchor-label="taskUri" id="741072522%2FProperties%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="task-uri.html"><span>task</span><wbr></wbr><span><span>Uri</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="741072522%2FProperties%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">val </span><a href="task-uri.html">taskUri</a><span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/net/URI.html">URI</a></div><div class="brief "><p class="paragraph">URI of this task.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-373711498%2FFunctions%2F-1818606378" anchor-label="addDependency" id="-373711498%2FFunctions%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="add-dependency.html"><span>add</span><wbr></wbr><span><span>Dependency</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-373711498%2FFunctions%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="add-dependency.html"><span class="token function">addDependency</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">depTaskUri<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/net/URI.html">URI</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">TaskSpec</a></div><div class="brief "><p class="paragraph">Adds a task as a direct dependency.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2047219033%2FFunctions%2F-1818606378" anchor-label="dependencyLevel" id="-2047219033%2FFunctions%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-task-node/dependency-level.html"><span>dependency</span><wbr></wbr><span><span>Level</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2047219033%2FFunctions%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-task-node/dependency-level.html"><span class="token function">dependencyLevel</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">resolver<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/net/URI.html">URI</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="../-task-node/index.html">TaskNode</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><p class="paragraph">Number of dependencies in the longest dependency line up to this task.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="707416568%2FFunctions%2F-1818606378" anchor-label="equals" id="707416568%2FFunctions%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="equals.html"><span><span>equals</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="707416568%2FFunctions%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">operator override </span><span class="token keyword">fun </span><a href="equals.html"><span class="token function">equals</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">other<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Equality is structural and depends only on <a href="task-uri.html">taskUri</a> and the classes of the two <a href="../-task-node/index.html">TaskNode</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="281625631%2FFunctions%2F-1818606378" anchor-label="hasDependency" id="281625631%2FFunctions%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-task-node/has-dependency.html"><span>has</span><wbr></wbr><span><span>Dependency</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="281625631%2FFunctions%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="../-task-node/has-dependency.html"><span class="token function">hasDependency</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">depTaskUri<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/net/URI.html">URI</a><span class="token punctuation">, </span></span><span class="parameter ">resolver<span class="token operator">: </span><span class="token punctuation">(</span><span class="token keyword"></span><a href="https://docs.oracle.com/javase/8/docs/api/java/net/URI.html">URI</a><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><span class="token keyword"></span><a href="../-task-node/index.html">TaskNode</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html">Boolean</a></div><div class="brief "><p class="paragraph">Whether the specified task is a dependency, direct or indirect, of this task.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-604028946%2FFunctions%2F-1818606378" anchor-label="hashCode" id="-604028946%2FFunctions%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="hash-code.html"><span>hash</span><wbr></wbr><span><span>Code</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-604028946%2FFunctions%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="hash-code.html"><span class="token function">hashCode</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><p class="paragraph">Hash code depends only on <a href="task-uri.html">taskUri</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="945855324%2FFunctions%2F-1818606378" anchor-label="numNodes" id="945855324%2FFunctions%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="num-nodes.html"><span>num</span><wbr></wbr><span><span>Nodes</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="945855324%2FFunctions%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword"></span><span class="token keyword">fun </span><a href="num-nodes.html"><span class="token function">numNodes</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">numProcsPerNode<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html">Int</a></div><div class="brief "><p class="paragraph">Minimum number of nodes needed for the task.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1781255051%2FFunctions%2F-1818606378" anchor-label="removeDependency" id="1781255051%2FFunctions%2F-1818606378" data-filterable-set="crul/JVM"></a>
+          <div class="table-row" data-filterable-current="crul/JVM" data-filterable-set="crul/JVM">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="remove-dependency.html"><span>remove</span><wbr></wbr><span><span>Dependency</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1781255051%2FFunctions%2F-1818606378"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable="crul/JVM"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">override </span><span class="token keyword">fun </span><a href="remove-dependency.html"><span class="token function">removeDependency</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">depTaskUri<span class="token operator">: </span><a href="https://docs.oracle.com/javase/8/docs/api/java/net/URI.html">URI</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="index.html">TaskSpec</a></div><div class="brief "><p class="paragraph">Removes a task as a direct dependency.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

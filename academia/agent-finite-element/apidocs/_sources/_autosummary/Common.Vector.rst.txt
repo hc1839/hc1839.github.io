@@ -1,0 +1,51 @@
+﻿Common.Vector
+=============
+
+.. autosummary::
+   :nosignatures:
+
+   
+      Common.Vector.asColumn
+   
+      Common.Vector.asRow
+   
+      Common.Vector.fnMatrixOfSympy
+   
+      Common.Vector.getColumnVectors
+   
+      Common.Vector.getRowVectors
+   
+      Common.Vector.gradient
+   
+      Common.Vector.intRound
+   
+      Common.Vector.isVector
+   
+      Common.Vector.jacobian
+   
+      Common.Vector.magnitude
+   
+      Common.Vector.nearlyEqualVectors
+   
+      Common.Vector.new
+   
+      Common.Vector.normalized
+   
+      Common.Vector.polarCoords
+   
+      Common.Vector.polarToVector
+   
+      Common.Vector.setDifference
+   
+      Common.Vector.setUnion
+   
+      Common.Vector.sympyOfFnMatrix
+   
+      Common.Vector.VectorFn
+   
+
+.. automodule:: Common.Vector
+   :show-inheritance:
+   :members:
+   :private-members:
+   :special-members:
