@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.9.34
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "README";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><div id='filecontents'><div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>TeXBibXML is a recursive descent parser in Ruby that parses TeX bibliography
+into an abstract syntax tree (AST) in XML. It offers the ability to use a
+custom parser for any field of a TeX bibliography entry. TeXBibXML includes a
+separate parser for parsing TeX with the similar ability to accept custom
+parsers for specific TeX commands.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_building">Building</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Build and install to the user directory as a gem with</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="code ruby"><code class="ruby">gem build texbibxml.gemspec
+gem install --user-install texbibxml-&lt;version&gt;.gem</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where <code>&lt;version&gt;</code> is the version of the gem. Executable is provided at
+<code>bin/texbibxml</code> under where the gem is installed. The gem can be uninstalled by</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="code ruby"><code class="ruby">gem uninstall --user-install texbibxml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Tests can be run with</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_rake'>rake</span> <span class='id identifier rubyid_test'>test</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_usage">Usage</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TeXBibXML can be used as a command-line application or as a library.</p>
+</div>
+<div class="sect2">
+<h3 id="_application">Application</h3>
+<div class="paragraph">
+<p>To use TeXBibXML as a command-line application for parsing a TeX bibliography
+file, <code>references.bib</code>, with pretty printing using <code>xmllint</code>,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="code ruby"><code class="ruby">texbibxml &lt;references.bib | xmllint --format -</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>texbibxml</code> executable reads only from standard input and does not take
+command-line arguments.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_library">Library</h3>
+<div class="paragraph">
+<p>To use TeXBibXML as a Ruby library for generating the AST of a TeX bibliography
+input,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>texbibxml</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_texbib'>texbib</span> <span class='op'>=</span> <span class='heredoc_beg'>&lt;&lt;&#39;EOF&#39;</span>
+<span class='tstring_content'>@article{
+  bjorck-1994,
+  author = &quot;Bj{\&quot;{o}}rck, {\r{A}}&quot;,
+  title = {Numerics of Gram-Schmidt Orthogonalization},
+  journal = {Linear Algebra and its Applications},
+  year = &quot;1994&quot;,
+  volume = &quot;197--198&quot;,
+  pages = &quot;297--316&quot;
+}
+@article{
+  west-2014,
+  author = &quot;West, Aaron&quot;,
+  title = {Weighted orthogonalization of atomic orbitals: A stable alternative to the Carlson-Keller method},
+  journal = {Computational and Theoretical Chemistry},
+  year = &quot;2014&quot;,
+  volume = &quot;1045&quot;,
+  pages = &quot;73--77&quot;
+}
+</span><span class='heredoc_end'>EOF
+</span><span class='id identifier rubyid_texbib_parser'>texbib_parser</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Texbibxml.html" title="Texbibxml (module)">Texbibxml</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Texbibxml/Tex.html" title="Texbibxml::Tex (module)">Tex</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Texbibxml/Tex/Bib.html" title="Texbibxml::Tex::Bib (module)">Bib</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Texbibxml/Tex/Bib/Parser.html" title="Texbibxml::Tex::Bib::Parser (class)">Parser</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Texbibxml/Tex/Bib/Parser.html#initialize-instance_method" title="Texbibxml::Tex::Bib::Parser#initialize (method)">new</a></span></span>
+<span class='id identifier rubyid_my_texbib_ast'>my_texbib_ast</span> <span class='op'>=</span> <span class='id identifier rubyid_texbib_parser'>texbib_parser</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='id identifier rubyid_texbib'>texbib</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_my_texbib_ast'>my_texbib_ast</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Pretty-printed output (via <code>xmllint</code> on the command line) of the XML document
+in the variable, <code>my_texbib_ast</code>, would be</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="code ruby"><code class="ruby">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;texbib&gt;
+  &lt;entry xml:id=&quot;bjorck-1994&quot; type=&quot;article&quot;&gt;
+    &lt;author&gt;Bj{\&quot;{o}}rck, {\r{A}}&lt;/author&gt;
+    &lt;title&gt;Numerics of Gram-Schmidt Orthogonalization&lt;/title&gt;
+    &lt;journal&gt;Linear Algebra and its Applications&lt;/journal&gt;
+    &lt;year&gt;1994&lt;/year&gt;
+    &lt;volume&gt;197--198&lt;/volume&gt;
+    &lt;pages&gt;297--316&lt;/pages&gt;
+  &lt;/entry&gt;
+  &lt;entry xml:id=&quot;west-2014&quot; type=&quot;article&quot;&gt;
+    &lt;author&gt;West, Aaron&lt;/author&gt;
+    &lt;title&gt;Weighted orthogonalization of atomic orbitals: A stable alternative to the Carlson-Keller method&lt;/title&gt;
+    &lt;journal&gt;Computational and Theoretical Chemistry&lt;/journal&gt;
+    &lt;year&gt;2014&lt;/year&gt;
+    &lt;volume&gt;1045&lt;/volume&gt;
+    &lt;pages&gt;73--77&lt;/pages&gt;
+  &lt;/entry&gt;
+&lt;/texbib&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The above output is simpler than the output from using the <code>texbibxml</code>
+executable since the executable passes a dedicated parser of the <code>author</code> field
+to the constructor of <code>Texbibxml::Tex::Bib::Parser</code>. Included in TeXBibXML, the
+parser of the <code>author</code> field separates the authors into their own <code>member</code>
+element and subdivides the name of each author to <code>surname</code> and <code>first-name</code>
+elements.</p>
+</div>
+<div class="paragraph">
+<p>Suppose John Doe and Jane Doe are authors of a fictional article in TeX
+bibliography:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="code ruby"><code class="ruby">@article{
+  doe-2023,
+  author = &quot;Doe, John and Jane Doe&quot;,
+  title = {The Doe Legacy},
+  journal = {Doe Publishing},
+  year = &quot;2023&quot;,
+  volume = &quot;1&quot;,
+  pages = &quot;1--10&quot;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Assuming this entry is read from standard input, the Ruby code to parse such an
+entry with additional parsing of the <code>author</code> field could be</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>texbibxml</span><span class='tstring_end'>&quot;</span></span>
+<span class='id identifier rubyid_texbib_author_parser'>texbib_author_parser</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Texbibxml.html" title="Texbibxml (module)">Texbibxml</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Texbibxml/Tex.html" title="Texbibxml::Tex (module)">Tex</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Texbibxml/Tex/Bib.html" title="Texbibxml::Tex::Bib (module)">Bib</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Texbibxml/Tex/Bib/Author.html" title="Texbibxml::Tex::Bib::Author (module)">Author</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Texbibxml/Tex/Bib/Author/Parser.html" title="Texbibxml::Tex::Bib::Author::Parser (class)">Parser</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Texbibxml/Tex/Bib/Author/Parser.html#initialize-instance_method" title="Texbibxml::Tex::Bib::Author::Parser#initialize (method)">new</a></span></span>
+<span class='id identifier rubyid_texbib_parser'>texbib_parser</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Texbibxml.html" title="Texbibxml (module)">Texbibxml</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Texbibxml/Tex.html" title="Texbibxml::Tex (module)">Tex</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Texbibxml/Tex/Bib.html" title="Texbibxml::Tex::Bib (module)">Bib</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Texbibxml/Tex/Bib/Parser.html" title="Texbibxml::Tex::Bib::Parser (class)">Parser</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Texbibxml/Tex/Bib/Parser.html#initialize-instance_method" title="Texbibxml::Tex::Bib::Parser#initialize (method)">new</a></span></span><span class='lparen'>(</span>
+  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>author</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='id identifier rubyid_lambda'>lambda</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id identifier rubyid__'>_</span><span class='comma'>,</span> <span class='id identifier rubyid_field_value'>field_value</span><span class='comma'>,</span> <span class='id identifier rubyid_entry_ast'>entry_ast</span><span class='op'>|</span>
+    <span class='id identifier rubyid_texbib_author_parser'>texbib_author_parser</span><span class='period'>.</span><span class='id identifier rubyid_append_ast'>append_ast</span><span class='lparen'>(</span><span class='id identifier rubyid_field_value'>field_value</span><span class='comma'>,</span> <span class='id identifier rubyid_entry_ast'>entry_ast</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='rparen'>)</span>
+<span class='id identifier rubyid_doe_texbib_ast'>doe_texbib_ast</span> <span class='op'>=</span> <span class='id identifier rubyid_texbib_parser'>texbib_parser</span><span class='period'>.</span><span class='id identifier rubyid_parse'>parse</span><span class='lparen'>(</span><span class='const'>STDIN</span><span class='period'>.</span><span class='id identifier rubyid_readlines'>readlines</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_doe_texbib_ast'>doe_texbib_ast</span><span class='period'>.</span><span class='id identifier rubyid_write'>write</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Pretty-printed output of <code>doe_texbib_ast</code> would be</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="code ruby"><code class="ruby">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;texbib&gt;
+  &lt;entry xml:id=&quot;doe-2023&quot; type=&quot;article&quot;&gt;
+    &lt;author&gt;
+      &lt;member&gt;
+        &lt;surname&gt;Doe&lt;/surname&gt;
+        &lt;first-name&gt;John&lt;/first-name&gt;
+      &lt;/member&gt;
+      &lt;member&gt;
+        &lt;surname&gt;Doe&lt;/surname&gt;
+        &lt;first-name&gt;Jane&lt;/first-name&gt;
+      &lt;/member&gt;
+    &lt;/author&gt;
+    &lt;title&gt;The Doe Legacy&lt;/title&gt;
+    &lt;journal&gt;Doe Publishing&lt;/journal&gt;
+    &lt;year&gt;2023&lt;/year&gt;
+    &lt;volume&gt;1&lt;/volume&gt;
+    &lt;pages&gt;1--10&lt;/pages&gt;
+  &lt;/entry&gt;
+&lt;/texbib&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When the parser of the <code>author</code> field is used, the <code>author</code> element in the
+resulting AST has the two authors separated with their respective surname and
+first name properly determined regardless of how their names are formatted in
+the TeX bibliography.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_documentation">Documentation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Documentation can be generated by</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="code ruby"><code class="ruby">yard doc -m markdown --protected --private -o target/site/apidocs</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>It is also available at <a href="https://hc1839.github.io/texbibxml/apidocs/" class="bare">https://hc1839.github.io/texbibxml/apidocs/</a>.</p>
+</div>
+</div>
+</div></div></div>
+
+      <div id="footer">
+  Generated by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.34.
+</div>
+
+    </div>
+  </body>
+</html>
